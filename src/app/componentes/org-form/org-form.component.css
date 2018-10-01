@@ -1,3 +1,16 @@
 .mat-form-field{
+    border: 1px solid rgb(98, 98, 98); 
     width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.checkbox-margin {
+    margin: 0 10px;
+  }
+
+  .mat-checkbox-inner-container{
+    height:15px;
+    width:15px; 
 }

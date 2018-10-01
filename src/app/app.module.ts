@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//Componentes
+// Componentes
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 
 // funcionalidades y estilos
-import { RouterModule, Routes } from '@angular/router'; 
+import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -56,6 +56,9 @@ import {
   MatTreeModule,
 } from '@angular/material';
 
+// Servicios
+import { OrgService } from './servicios/org.service';
+
 const appRoutes: Routes = [
   {
    path: '',
@@ -70,6 +73,9 @@ const appRoutes: Routes = [
     component: VoluntarioFormComponent
   }
 ];
+
+// Services
+export function getOrgServiceConfigs() { }
 
 @NgModule({
   declarations: [
@@ -125,7 +131,9 @@ const appRoutes: Routes = [
     MatCardModule,
     MatChipsModule,
   ],
-  providers: [],
+  providers: [
+    OrgService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { VoluntarioFormComponent } from './voluntario-form/voluntario-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VoluntarioFormComponent
   ],
   imports: [
     BrowserModule

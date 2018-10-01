@@ -1,3 +1,12 @@
-<p>
-  org-form works!
-</p>
+<div class="container">
+  <form [formGroup]="postForm" (ngSubmit)="addPost()">
+    <p>¡Muchas Gracias por querer colaborar!</p>
+    <p>En este formulario podrás inscribirte como organización colaboradora en caso de catastrofe. Por favor completa los iguientes campos:</p>
+    <mat-form-field>
+      <input matInput #contactname type="text" formControlName="contact-name" placeholder="Nombre de la persona de contacto">
+      <p *ngIf="postForm.get('contact-name').errors && postForm.get('contact-name').errors.required && (postForm.get('contact-name').dirty || postForm.get('contact-name').touched)" style="color:red;">Ingresa tu nombre</p>
+    </mat-form-field>
+    
+    <button mat-button type="submit" [disabled]="!postForm.valid">¡Enviar registro!</button>
+  </form>
+</div>

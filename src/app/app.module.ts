@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 //Componentes
 import { AppComponent } from './app.component';
+import { HomeComponent } from './componentes/home/home.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 
@@ -12,6 +13,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 // Angular Material
 import {
@@ -53,15 +56,18 @@ import {
   MatTreeModule,
 } from '@angular/material';
 
-
 const appRoutes: Routes = [
   {
-    path: '',
-    component: HomeComponent
+   path: '',
+   component: HomeComponent
   },
   {
-    path: '/org-form',
+    path: 'org-form',
     component: OrgFormComponent
+  },
+  {
+    path: 'voluntario-form',
+    component: VoluntarioFormComponent
   }
 ];
 
@@ -69,7 +75,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     VoluntarioFormComponent,
-    OrgFormComponent
+    OrgFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +84,8 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase, 'proyecto-here'),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,

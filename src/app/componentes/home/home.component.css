@@ -1,0 +1,12 @@
+.contenedor {
+ background-color: rgb(250, 242, 226);
+ width: 25em;
+ height: 30em;
+ margin: 10%;
+ padding: 2em;
+}
+
+.formulario {
+    padding: 3em;
+
+}

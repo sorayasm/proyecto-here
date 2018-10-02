@@ -83,11 +83,6 @@ const appRoutes: Routes = [
 
 // Services
 export function getOrgServiceConfigs() { }
-import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
-import { HomeComponent } from './componentes/home/home.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [

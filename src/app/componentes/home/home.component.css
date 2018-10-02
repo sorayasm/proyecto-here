@@ -4,9 +4,15 @@
  height: 30em;
  margin: 10%;
  padding: 2em;
+ text-align: center;
 }
 
 .formulario {
     padding: 3em;
-
 }
+
+/* img {
+    height: 10em;
+    width: 20em;
+    padding: 2em;
+} */

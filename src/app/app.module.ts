@@ -7,7 +7,6 @@ import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 
 // import de material angular scar
-import {MatButtonModule} from '@angular/material/button';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -19,7 +18,6 @@ import {MatInputModule} from '@angular/material/input';
     VoluntarioFormComponent,
     HomeComponent,
     LoginComponent,
-    MatButtonModule
   ],
   imports: [
     BrowserModule,

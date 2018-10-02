@@ -12,18 +12,13 @@ export interface OrgProfile {
   uid: string;
   contactname: string;
   contactrut: string;
-  contactemail: string;
-  contactphone: string;
   orgname: string;
   orgrut: string;
   orgmail: string;
   orgphone: string;
-  orgdircity: string;
-  orgdirzip: string;
-  orgdirstreet: string;
-  orgdirnumber: string;
-  orgdirother: string;
-  orgvolunteer: string;
+  orgdir: string;
+  open: string;
+  close: string;
   orgother: string;
 }
 

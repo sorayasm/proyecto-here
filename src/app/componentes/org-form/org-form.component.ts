@@ -35,18 +35,13 @@ orgList$: AngularFireList<any>;
       password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       contactname: [''],
       contactrut: [''],
-      contactemail: [''],
-      contactphone: [''],
       orgname: [''],
       orgrut: [''],
       orgmail: [''],
       orgphone: [''],
-      orgdircity: [''],
-      orgdirzip: [''],
-      orgdirstreet: [''],
-      orgdirnumber: [''],
-      orgdirother: [''],
-      orgvolunteer: [''],
+      orgdir: [''],
+      open: [''],
+      close: [''],
       orgother: ['']
     });
   }
@@ -70,7 +65,7 @@ orgList$: AngularFireList<any>;
   addOrg() {
     const newOrg = {
       email: this.orgForm.value.email,
-      uid: this.firebaseAuth.auth.currentUser.uid,
+     // uid: this.firebaseAuth.auth.currentUser.uid,
       contactname: this.orgForm.value.contactname,
       contactrut: this.orgForm.value.contactrut,
       contactemail: this.orgForm.value.contactemail,
@@ -79,6 +74,8 @@ orgList$: AngularFireList<any>;
       orgrut: this.orgForm.value.orgrut,
       orgmail: this.orgForm.value.orgmail,
       orgphone: this.orgForm.value.orgphone,
+      open: this.orgForm.value.open,
+      orgclose: this.orgForm.value.close,
       orgdir: this.orgForm.value.orgdir
     };
     this.orgList$.push(newOrg);

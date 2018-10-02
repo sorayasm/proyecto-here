@@ -42,9 +42,12 @@ export class MapComponent implements OnInit {
             'app_id': this.appId,
             'app_code': this.appCode
         });
+        this.search = new H.places.Search(this.platform.getPlacesService());
     }
 
+    // tslint:disable-next-line:use-life-cycle-interface
     public ngAfterViewInit() {
+       // tslint:disable-next-line:prefer-const
         let defaultLayers = this.platform.createDefaultLayers();
         this.map = new H.Map(
             this.mapElement.nativeElement,
@@ -54,6 +57,8 @@ export class MapComponent implements OnInit {
                 center: { lat: this.lat, lng: this.lng }
             }
         );
+        this.map.addLayer(defaultLayers.venues);
+        // tslint:disable-next-line:prefer-const
         let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
         this.ui = H.ui.UI.createDefault(this.map, defaultLayers, 'es-ES');
     }
@@ -62,17 +67,23 @@ export class MapComponent implements OnInit {
         this.map.removeObjects(this.map.getObjects());
         this.search.request({ 'q': query, 'at': this.lat + ',' + this.lng }, {}, data => {
             for (let i = 0; i < data.results.items.length; i++) {
-                this.dropMarker({ 'lat': data.results.items[i].position[0], 'lng': data.results.items[i].position[1] }, data.results.items[i]);
+                this.dropMarker({
+                    'lat': data.results.items[i].position[0],
+                    'lng': data.results.items[i].position[1] },
+                    data.results.items[i]);
             }
         }, error => {
             console.error(error);
-    });
+        });
+    }
 
     private dropMarker(coordinates: any, data: any) {
-        const marker = new H.map.Marker(coordinates);
-        marker.setData('<p>' + data.title + '<br>' + data.vicinity + '</p>');
+        // tslint:disable-next-line:prefer-const
+        let marker = new H.map.Marker(coordinates);
+        marker.setData(`<p class='marker'>` + data.title + `<br>` + data.vicinity + `</p>`);
         marker.addEventListener('tap', event => {
-            const bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
+        // tslint:disable-next-line:prefer-const
+            let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
                 content: event.target.getData()
             });
             this.ui.addBubble(bubble);

@@ -1,8 +1,4 @@
-.map{
-    width: 90vw;
-    height: 90vh;
+.marker {
+    width: 160px;
 }
 
-.H_ib_body {
-    width: 275px;
-}

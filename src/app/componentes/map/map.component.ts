@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
+declare var H: any;
 
 @Component({
   selector: 'app-map',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  private platform: any;
 
-  ngOnInit() {
+  @ViewChild('map')
+  public mapElement: ElementRef;
+
+  public constructor() {
+    this.platform = new H.service.Platform({
+        'app_id': 'vvZ3bT5wEdEGwTxWyyVA',
+        'app_code': 'DrBz6nmjEAehxuHf3j9p6Q'
+    });
   }
+
+  public ngOnInit() { }
+
+  public ngAfterViewInit() {
+    const defaultLayers = this.platform.createDefaultLayers();
+    const map = new H.Map(
+        this.mapElement.nativeElement,
+        defaultLayers.normal.map,
+        {
+            zoom: 10,
+            center: { lat: 37.7397, lng: -121.4252 }
+        }
+    );
+  }
+
 
 }

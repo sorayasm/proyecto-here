@@ -1,9 +1,9 @@
 .contenedor {
- background-color: rgb(250, 242, 226);
+ background-color: rgba(255, 167, 5, 0.747);
  width: 25em;
  height: 30em;
- margin: 10%;
- padding: 2em;
+ margin: 5%;
+ padding: 2.5em;
  text-align: center;
 }
 

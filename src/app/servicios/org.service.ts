@@ -24,6 +24,7 @@ export interface OrgProfile {
   orgdirnumber: string;
   orgdirother: string;
   orgvolunteer: string;
+  orgother: string;
 }
 
 @Injectable({

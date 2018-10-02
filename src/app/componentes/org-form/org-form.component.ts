@@ -46,7 +46,8 @@ orgList$: AngularFireList<any>;
       orgdirstreet: [''],
       orgdirnumber: [''],
       orgdirother: [''],
-      orgvolunteer: ['']
+      orgvolunteer: [''],
+      orgother: ['']
     });
   }
 

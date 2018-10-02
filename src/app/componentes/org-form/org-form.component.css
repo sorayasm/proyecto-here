@@ -1,15 +1,6 @@
 .mat-form-field{
-    width: 100%;
+    width: 90%;
     margin-top: .5em;
     margin-bottom: .5em;
     padding: .5em;
-}
-
-.checkbox-margin {
-    margin: 0 10px;
-  }
-
-  .mat-checkbox-inner-container{
-    height:15px;
-    width:15px; 
 }

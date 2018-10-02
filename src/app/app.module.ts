@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
+import { MapComponent } from './componentes/map/map.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -60,6 +61,7 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 
+
 const appRoutes: Routes = [
   {
    path: '',
@@ -72,6 +74,10 @@ const appRoutes: Routes = [
   {
     path: 'voluntario-form',
     component: VoluntarioFormComponent
+  },
+  {
+    path: 'map',
+    component: MapComponent
   }
 ];
 
@@ -83,7 +89,8 @@ export function getOrgServiceConfigs() { }
     AppComponent,
     VoluntarioFormComponent,
     OrgFormComponent,
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

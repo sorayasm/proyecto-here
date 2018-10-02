@@ -1,6 +1,6 @@
 <div class='container'>
   <form [formGroup]='orgForm' (ngSubmit)='submit()'>
-    <h1>¡Muchas Gracias por querer colaborar!</h1>
+    <h2>¡Muchas Gracias por querer colaborar!</h2>
     <h5>En este formulario podrás inscribirte como organización colaboradora en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
     <br>
     <h4>Datos de la cuenta</h4>
@@ -55,23 +55,13 @@
       <input matInput #orgdirother type='text' formControlName='orgdirother' placeholder='Otra información'>
     </mat-form-field>
     <p>Selecciona el tipo de centro de ayuda que corresponde a tu organización:</p>
-      <mat-checkbox>Refugio</mat-checkbox>
+      <mat-checkbox class="margin">Refugio</mat-checkbox><br>
+      <mat-checkbox class="margin">Centro de Acopio</mat-checkbox><br>
+      <mat-checkbox class="margin">Transporte de Ayuda</mat-checkbox><br>
+      <mat-checkbox class="margin">Entrega de Alimentos</mat-checkbox><br>
+      <mat-checkbox class="margin">Primeros Auxilios</mat-checkbox><br>
       <br>
-      <mat-checkbox>Centro de Acopio</mat-checkbox>
-      <br>
-      <mat-checkbox>Transporte de Ayuda</mat-checkbox>
-      <br>
-      <mat-checkbox>Entrega de Alimentos</mat-checkbox>
-      <br>
-      <mat-checkbox>Primeros Auxilios</mat-checkbox>
-      <br>
-      <br>
-    <p>Indica si requieres voluntarios</p>
-      <mat-checkbox>Si</mat-checkbox>
-      <br>
-      <mat-checkbox>No</mat-checkbox>
-      <br>
-      <p>Indica cuantos voluntarios requiere tu centro de ayuda</p>
+    <p>Si requieres voluntarios, indica cuántas personas de apoyo necesitas:</p>
       <mat-form-field>
       <input matInput #orgvolunteer type='text' formControlName='orgvolunteer' placeholder='Número de voluntarios solicitados'>
       </mat-form-field>
@@ -80,7 +70,12 @@
         <input matInput [matDatepicker]='picker' placeholder='Elige una fecha de apertura de Centro de Ayuda'>
         <mat-datepicker-toggle matSuffix [for]='picker'></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>           
+      </mat-form-field> 
+      <br>
+      <p>Otra información relevante:</p>
+      <mat-form-field>
+        <textarea matInput #orgother type='textarea' formControlName='orgother' placeholder='Otra información'></textarea>
+      </mat-form-field>          
     <p>Para completar el registro acepta los siguientes convenios (obligatorio):</p>
     <mat-checkbox>Política de Responsabilidad de Centro de ayuda en situación de Catástrofe</mat-checkbox>
     <br>

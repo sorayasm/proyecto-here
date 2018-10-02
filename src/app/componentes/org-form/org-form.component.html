@@ -1,0 +1,72 @@
+<div class='container'>
+  <form [formGroup]='orgForm' (ngSubmit)='submit()'>
+    <h2>¡Muchas Gracias por querer colaborar!</h2>
+    <h5>En este formulario podrás inscribirte como organización colaboradora en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
+    <br>
+    <h4>Datos de la cuenta</h4>
+    <mat-form-field>
+      <input matInput #email type='email' formControlName='email' placeholder='Correo de la organización'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #pass type='password' formControlName='password' placeholder='Contraseña'>
+    </mat-form-field>
+    <h4>Datos de contacto</h4>
+    <mat-form-field>
+      <input matInput #contactname type='text' formControlName='contactname' placeholder='Nombre de la persona de contacto'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #contactrut type='text' formControlName='contactrut' placeholder='RUT de la persona de contacto'>
+    </mat-form-field>
+  <h4>Datos de la organización</h4>
+    <mat-form-field>
+      <input matInput #orgname type='text' formControlName='orgname' placeholder='Nombre de la organización'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #orgrut type='text' formControlName='orgrut' placeholder='RUT de la organización'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #orgmail type='text' formControlName='orgmail' placeholder='Correo de la organización'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #orgphone type='text' formControlName='orgphone' placeholder='Teléfono de la organización'>
+    </mat-form-field>
+    <h4>Centro de Ayuda</h4>
+    <br>
+      <p>Por favor ingresa la dirección del Centro de Ayuda</p>
+    <mat-form-field>
+      <input matInput #orgdir type='text' formControlName='orgdir' placeholder='Ciudad'>
+    </mat-form-field>
+    <p>Selecciona el tipo de centro de ayuda que corresponde a tu organización:</p>
+    <mat-checkbox class="margin">Refugio</mat-checkbox><br>
+    <mat-checkbox class="margin">Centro de Acopio</mat-checkbox><br>
+    <mat-checkbox class="margin">Transporte de Ayuda</mat-checkbox><br>
+    <mat-checkbox class="margin">Entrega de Alimentos</mat-checkbox><br>
+    <mat-checkbox class="margin">Primeros Auxilios</mat-checkbox><br>
+    <br>
+    <p>Indicanos cuánto tiempo estará disponible el Centro de ayuda de tu organización</p>
+    <mat-form-field>
+      <input matInput [matDatepicker]='open' placeholder='Elige una fecha de apertura de Centro de Ayuda'>
+      <mat-datepicker-toggle matSuffix [for]='open'></mat-datepicker-toggle>
+      <mat-datepicker #open></mat-datepicker>
+    </mat-form-field> 
+    <br>
+    <mat-form-field>
+      <input matInput [matDatepicker]='close' placeholder='Elige una fecha de cierre de Centro de Ayuda'>
+      <mat-datepicker-toggle matSuffix [for]='close'></mat-datepicker-toggle>
+      <mat-datepicker #close></mat-datepicker>
+    </mat-form-field> 
+    <p>Otra información relevante:</p>
+    <mat-form-field>
+      <textarea matInput #orgother type='textarea' formControlName='orgother' placeholder='Otra información'></textarea>
+    </mat-form-field>          
+    <p>Para completar el registro acepta los siguientes convenios (obligatorio):</p>
+    <mat-checkbox>Política de Responsabilidad de Centro de ayuda.</mat-checkbox>
+    <br>
+    <mat-checkbox>Políticas de privacidad de datos.</mat-checkbox>
+    <br>
+    <mat-checkbox>Convenio de Políticas de nuestra web.</mat-checkbox>
+    <br>
+    <button mat-button type='submit' [disabled]='!orgForm.valid'>¡Enviar registro!</button>
+  </form>
+</div>
+

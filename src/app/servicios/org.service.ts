@@ -7,25 +7,47 @@ import { Observable } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireList } from '@angular/fire/database';
 
+export interface OrgProfile {
+  email: string;
+  uid: string;
+  contactname: string;
+  contactrut: string;
+  contactemail: string;
+  contactphone: string;
+  orgname: string;
+  orgrut: string;
+  orgmail: string;
+  orgphone: string;
+  orgdircity: string;
+  orgdirzip: string;
+  orgdirstreet: string;
+  orgdirnumber: string;
+  orgdirother: string;
+  orgvolunteer: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class OrgService {
-  public orgs$: Observable<firebase.User>;
+  public users$: Observable<firebase.User>;
   public orgDetails$: firebase.User = null;
   public orgList$: AngularFireList<any>;
+  public profile: AngularFireList<OrgProfile[]> = null;
 
   constructor(
     public firebaseAuth: AngularFireAuth,
     public database: AngularFireDatabase,
     public router: Router
     ) {
-    this.orgs$ = firebaseAuth.authState;
-    this.orgList$ = this.database.list('/orgs');
-    this.orgs$.subscribe(
-    (org) => {
-      if (org) {
-        this.orgDetails$ = org;
+    // Autenticación
+    this.users$ = firebaseAuth.authState;
+    this.users$.subscribe(
+    (user) => {
+      if (user) {
+        this.orgDetails$ = user;
       } else {
         this.orgDetails$ = null;
       }
@@ -44,6 +66,11 @@ export class OrgService {
         console.log('Something went wrong:', err.message);
       });
   }
+
+  createOrg(org: OrgProfile) {
+  this.orgList$.push(org);
+  }
+
 
   login(email: string, password: string) {
      return this.firebaseAuth

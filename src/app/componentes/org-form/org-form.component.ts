@@ -1,51 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { OrgService } from '../../servicios/org.service';
+import { OrgService, OrgProfile } from '../../servicios/org.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireList } from '@angular/fire/database';
 
 @Component({
   selector: 'app-org-form',
   templateUrl: './org-form.component.html',
   styleUrls: ['./org-form.component.css']
 })
+
 export class OrgFormComponent implements OnInit {
 orgForm: FormGroup;
+orgList$: AngularFireList<any>;
 
-  constructor(public formBuilder: FormBuilder,
+  constructor(
+    public formBuilder: FormBuilder,
     public snackBar: MatSnackBar,
     public router: Router,
     public firebaseAuth: AngularFireAuth,
+    public database: AngularFireDatabase,
     public orgService: OrgService) {
     this.createOrgForm();
+    this.orgList$ = this.database.list('/orgs');
     }
-
-  ngOnInit() {
-  }
 
   createOrgForm() {
     this.orgForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-     // contactname: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-     // contactrut: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-     // contactemail: ['', Validators.compose([Validators.required, Validators.email])],
-     // contactphone: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-     // orgname: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-     // orgrut: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-     // orgmail: ['', Validators.compose([Validators.required, Validators.email])],
-     // orgphone: ['', Validators.compose([Validators.required, Validators.minLength(9)])],
-     // orgdir: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      contactname: [''],
+      contactrut: [''],
+      contactemail: [''],
+      contactphone: [''],
+      orgname: [''],
+      orgrut: [''],
+      orgmail: [''],
+      orgphone: [''],
+      orgdircity: [''],
+      orgdirzip: [''],
+      orgdirstreet: [''],
+      orgdirnumber: [''],
+      orgdirother: [''],
+      orgvolunteer: ['']
     });
   }
 
   onRegister() {
   this.orgService.signup(this.orgForm.value.email, this.orgForm.value.password)
   .then(() => {
-  // Registro exitoso. Ingresemos los datos a la base de Datos y redireccionamos al login
-  this.router.navigate(['/wall']);
+  // Registro exitoso.
+    console.log('registro exitoso');
   })
   .catch(() => {
   // Algo salió mal, avisemos mejor para que reintente
@@ -57,7 +66,33 @@ orgForm: FormGroup;
   });
   }
 
+  addOrg() {
+    const newOrg = {
+      email: this.orgForm.value.email,
+      uid: this.firebaseAuth.auth.currentUser.uid,
+      contactname: this.orgForm.value.contactname,
+      contactrut: this.orgForm.value.contactrut,
+      contactemail: this.orgForm.value.contactemail,
+      contactphone: this.orgForm.value.contactphone,
+      orgname: this.orgForm.value.orgname,
+      orgrut: this.orgForm.value.orgrut,
+      orgmail: this.orgForm.value.orgmail,
+      orgphone: this.orgForm.value.orgphone,
+      orgdir: this.orgForm.value.orgdir
+    };
+    this.orgList$.push(newOrg);
+    console.log('agregada nueva org');
+  }
+
+  submit() {
+  this.addOrg();
+  this.onRegister();
+  }
+
   onLogout() {
   return this.orgService.logout();
+  }
+
+  ngOnInit() {
   }
 }

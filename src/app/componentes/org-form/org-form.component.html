@@ -1,7 +1,7 @@
 <div class='container'>
-  <form [formGroup]='orgForm' (ngSubmit)='onRegister()'>
+  <form [formGroup]='orgForm' (ngSubmit)='submit()'>
     <h1>¡Muchas Gracias por querer colaborar!</h1>
-    <h2>En este formulario podrás inscribirte como organización colaboradora en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h2>
+    <h5>En este formulario podrás inscribirte como organización colaboradora en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
     <br>
     <h4>Datos de la cuenta</h4>
     <mat-form-field>
@@ -37,32 +37,57 @@
       <input matInput #orgphone type='text' formControlName='orgphone' placeholder='Teléfono de la organización'>
     </mat-form-field>
     <h4>Centro de Ayuda</h4>
-    <!-- mat-form-field>
-      <p>Por favor ingresa la Dirección Completa del Centro de Ayuda (calle, número, depto, villa o sector, ciudad y región)</p>
-      <input matInput #orgdir type='text' formControlName='orgdir' placeholder='Dirección'>
+    <br>
+      <p>Por favor ingresa la dirección del Centro de Ayuda</p>
+    <mat-form-field>
+      <input matInput #orgdircity type='text' formControlName='orgdircity' placeholder='Ciudad'>
     </mat-form-field>
     <mat-form-field>
-       <p>Selecciona el tipo de centro de ayuda que corresponde a tu organización:</p>
-        <mat-checkbox>Refugio</mat-checkbox>
-        <br>
-        <mat-checkbox>Centro de Acopio</mat-checkbox>
-        <br>
-        <mat-checkbox>Transporte de Ayuda</mat-checkbox>
-        <br>
-        <mat-checkbox>Entrega de Alimentos</mat-checkbox>
-        <br>
-        <mat-checkbox>Primeros Auxilios</mat-checkbox>
+      <input matInput #orgdirzip type='text' formControlName='orgdirzip' placeholder='Código Zip'>
     </mat-form-field>
     <mat-form-field>
-      <p>Indica si requieres voluntarios</p>
+      <input matInput #orgdirstreet type='text' formControlName='orgdirstreet' placeholder='Calle'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #orgdirnumber type='text' formControlName='orgdirnumber' placeholder='Número'>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #orgdirother type='text' formControlName='orgdirother' placeholder='Otra información'>
+    </mat-form-field>
+    <p>Selecciona el tipo de centro de ayuda que corresponde a tu organización:</p>
+      <mat-checkbox>Refugio</mat-checkbox>
+      <br>
+      <mat-checkbox>Centro de Acopio</mat-checkbox>
+      <br>
+      <mat-checkbox>Transporte de Ayuda</mat-checkbox>
+      <br>
+      <mat-checkbox>Entrega de Alimentos</mat-checkbox>
+      <br>
+      <mat-checkbox>Primeros Auxilios</mat-checkbox>
+      <br>
+      <br>
+    <p>Indica si requieres voluntarios</p>
       <mat-checkbox>Si</mat-checkbox>
       <br>
       <mat-checkbox>No</mat-checkbox>
-    </mat-form-field>
-    <mat-form-field>
+      <br>
       <p>Indica cuantos voluntarios requiere tu centro de ayuda</p>
+      <mat-form-field>
       <input matInput #orgvolunteer type='text' formControlName='orgvolunteer' placeholder='Número de voluntarios solicitados'>
-    </mat-form-field -->
+      </mat-form-field>
+      <p>Indicanos cuánto tiempo está disponible el Centro de ayuda de tu organización</p>
+      <mat-form-field>
+        <input matInput [matDatepicker]='picker' placeholder='Elige una fecha de apertura de Centro de Ayuda'>
+        <mat-datepicker-toggle matSuffix [for]='picker'></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>           
+    <p>Para completar el registro acepta los siguientes convenios (obligatorio):</p>
+    <mat-checkbox>Política de Responsabilidad de Centro de ayuda en situación de Catástrofe</mat-checkbox>
+    <br>
+    <mat-checkbox>Políticas de privacidad de datos</mat-checkbox>
+    <br>
+    <mat-checkbox>Convenio de Políticas de nuestra web</mat-checkbox>
+    <br>
     <button mat-button type='submit' [disabled]='!orgForm.valid'>¡Enviar registro!</button>
   </form>
 </div>

@@ -37,6 +37,9 @@
       <input matInput #orgdir type='text' formControlName='orgdir' placeholder='Ciudad'>
     </mat-form-field>
     <p>Selecciona el tipo de centro de ayuda que corresponde a tu organización:</p>
+    <ng-container [formGroup]="form">
+      <mat-checkbox *ngFor="let controlName of controlNames" [formControlName]="controlName">{{controlName}}</mat-checkbox>
+    </ng-container>
     <mat-checkbox class="margin">Refugio</mat-checkbox><br>
     <mat-checkbox class="margin">Centro de Acopio</mat-checkbox><br>
     <mat-checkbox class="margin">Transporte de Ayuda</mat-checkbox><br>

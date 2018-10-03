@@ -7,50 +7,44 @@ import { Observable } from 'rxjs';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireList } from '@angular/fire/database';
 
-export interface OrgProfile {
-  email: string;
-  uid: string;
+export interface VolProfile {
+  name: string;
+  lastname: string;
   contactname: string;
-  contactrut: string;
-  orgname: string;
-  orgrut: string;
-  orgmail: string;
-  orgphone: string;
+  rut: string;
+  age: string;
+  tel: string;
+  email: string;
+  detail: string;
   orgdir: string;
-  open: string;
-  close: string;
-  orgother: string;
+  password: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
-
-
-export class OrgService {
+export class VolService {
   public users$: Observable<firebase.User>;
-  public orgDetails$: firebase.User = null;
-  public orgList$: AngularFireList<any>;
-  public profile: AngularFireList<OrgProfile[]> = null;
+  public volDetails$: firebase.User = null;
+  public volList$: AngularFireList<any>;
+  public profile: AngularFireList<VolProfile[]> = null;
 
   constructor(
     public firebaseAuth: AngularFireAuth,
     public database: AngularFireDatabase,
     public router: Router
-    ) {
-    // Autenticación
+  ) {
     this.users$ = firebaseAuth.authState;
     this.users$.subscribe(
     (user) => {
       if (user) {
-        this.orgDetails$ = user;
+        this.volDetails$ = user;
       } else {
-        this.orgDetails$ = null;
+        this.volDetails$ = null;
       }
     }
   );
   }
-
   signup(email: string, password: string) {
     return this.firebaseAuth
       .auth
@@ -62,9 +56,24 @@ export class OrgService {
         console.log('Something went wrong:', err.message);
       });
   }
-
-  createOrg(org: OrgProfile) {
-  this.orgList$.push(org);
-  }
+  createOrg(org: VolProfile) {
+    this.volList$.push(org);
+    }
+    login(email: string, password: string) {
+      return this.firebaseAuth
+       .auth
+       .signInWithEmailAndPassword(email, password);
+   }
+   isLoggedIn() {
+    if (this.volDetails$ == null ) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    logout() {
+      return this.firebaseAuth.auth.signOut()
+          .then((res) => this.router.navigate(['/']));
+        }
 
 }

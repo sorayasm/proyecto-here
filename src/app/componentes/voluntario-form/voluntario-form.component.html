@@ -1,27 +1,41 @@
-<div class="formvol">
+<div class="mat-form-field">
+  <form [formGroup]='volForm' (ngSubmit)='submit()'>
+    <h2>¡Muchas Gracias por querer colaborar!</h2>
+    <h5>En este formulario podrás inscribirte como voluntario en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
+    <br>
+    <h4>Datos Personales</h4>
   <mat-form-field>
-    <input matInput placeholder="Nombre">
+    <input matInput #name formControlName='name'  placeholder="Nombre">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Apellidos">
+    <input matInput #lastname formControlName='lastname'  placeholder="Apellidos">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Rut">
+    <input matInput placeholder="Rut" #rut formControlName='rut' type="text">
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Edad">
+    <input matInput placeholder="Edad" #age formControlName='age' >
+  </mat-form-field>
+  <h4>Datos Ayuda</h4>
+  <mat-form-field>
+      <input matInput placeholder="Telefono de contacto" #tel formControlName='tel' >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="email" #email formControlName='email' placeholder="mail">
+    </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Detalla el tipo de ayuda que vas a prestar" #datail formControlName='detail'></textarea>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Telefono de contacto">
-  </mat-form-field>
-  <mat-form-field>
-    <input type="email" matInput placeholder="mail">
-  </mat-form-field>
-  <mat-form-field>
-    <textarea matInput placeholder="Detalle"></textarea>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput type="password" placeholder="Contraseña">
-  </mat-form-field>
-  <button mat-button>Registro</button>
+      <input matInput #password type='password' formControlName='password' placeholder='Contraseña'>
+    </mat-form-field>
+    <p>Para completar el registro acepta los siguientes convenios (obligatorio):</p>
+    <mat-checkbox>Política de Responsabilidad de Voluntarios.</mat-checkbox>
+    <br>
+    <mat-checkbox>Políticas de privacidad de datos.</mat-checkbox>
+    <br>
+    <mat-checkbox>Convenio de Políticas de nuestra web.</mat-checkbox>
+    <br>
+    <button mat-button type='submit' [disabled]='!volForm.valid'>¡Enviar registro!</button>
+  </form>
 </div>

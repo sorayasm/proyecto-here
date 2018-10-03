@@ -17,6 +17,9 @@ import { AngularFireList } from '@angular/fire/database';
 export class OrgFormComponent implements OnInit {
 orgForm: FormGroup;
 orgList$: AngularFireList<any>;
+form;
+controlNames;
+selectedNames$;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -40,6 +43,7 @@ orgList$: AngularFireList<any>;
       orgmail: [''],
       orgphone: [''],
       orgdir: [''],
+      orgcenters: [''],
       open: [''],
       close: [''],
       orgother: ['']
@@ -68,14 +72,13 @@ orgList$: AngularFireList<any>;
      // uid: this.firebaseAuth.auth.currentUser.uid,
       contactname: this.orgForm.value.contactname,
       contactrut: this.orgForm.value.contactrut,
-      contactemail: this.orgForm.value.contactemail,
-      contactphone: this.orgForm.value.contactphone,
       orgname: this.orgForm.value.orgname,
       orgrut: this.orgForm.value.orgrut,
       orgmail: this.orgForm.value.orgmail,
       orgphone: this.orgForm.value.orgphone,
-      open: this.orgForm.value.open,
-      orgclose: this.orgForm.value.close,
+      // centerType: '',
+      open: this.orgForm.value.open.value,
+      orgclose: this.orgForm.value.close.value,
       orgdir: this.orgForm.value.orgdir
     };
     this.orgList$.push(newOrg);
@@ -85,10 +88,6 @@ orgList$: AngularFireList<any>;
   submit() {
   this.addOrg();
   this.onRegister();
-  }
-
-  onLogout() {
-  return this.orgService.logout();
   }
 
   ngOnInit() {

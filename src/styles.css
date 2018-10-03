@@ -1,2 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.H_ib_body {
+    width: 150px;
+}
+
+.H_ib_body p{
+    font-size: 11px;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+
+md-icon {
+    font-family: 'Material Icons' !important;
+    color: rgb(49, 49, 49)
+}

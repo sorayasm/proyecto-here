@@ -1,6 +1,11 @@
 import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { containsElement } from '@angular/animations/browser/src/render/shared';
 
 declare var H: any;
+
+
+
+  
 
 @Component({
   selector: 'app-map',
@@ -53,14 +58,15 @@ export class MapComponent implements OnInit {
             this.mapElement.nativeElement,
             defaultLayers.normal.map,
             {
-                zoom: 5,
+                zoom: 12,
                 center: { lat: this.lat, lng: this.lng }
             }
         );
-        this.map.addLayer(defaultLayers.venues);
         // tslint:disable-next-line:prefer-const
         let behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(this.map));
         this.ui = H.ui.UI.createDefault(this.map, defaultLayers, 'es-ES');
+        this.addMarkers();
+        this.map.addLayer(defaultLayers.venues);
     }
 
     public places(query: string) {
@@ -80,7 +86,7 @@ export class MapComponent implements OnInit {
     private dropMarker(coordinates: any, data: any) {
         // tslint:disable-next-line:prefer-const
         let marker = new H.map.Marker(coordinates);
-        marker.setData(`<p class='marker'>` + data.title + `<br>` + data.vicinity +`<br> Centro de Acopio` + `</p>`);
+        marker.setData(`<p class='marker'>` + data.title + `<br>` + data.vicinity + `<br> Centro de Acopio` + `</p>`);
         marker.addEventListener('tap', event => {
         // tslint:disable-next-line:prefer-const
             let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
@@ -89,6 +95,23 @@ export class MapComponent implements OnInit {
             this.ui.addBubble(bubble);
         }, false);
         this.map.addObject(marker);
+    }
+
+    private addMarkers() {
+        const toronto = new H.map.Marker({lat: 43.7,  lng: -79.4}),
+            boston = new H.map.Marker({lat: 42.35805, lng: -71.0636}),
+            washington = new H.map.Marker({lat: 38.8951, lng: -77.0366}),
+            group = new H.map.Group();
+        group.addObjects([toronto, boston, washington]);
+        // tslint:disable-next-line:max-line-length
+        group.setData(html);
+        group.addEventListener('tap', function (evt) {
+                let bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
+                  content: evt.target.getData()
+                });
+                this.ui.addBubble(bubble);
+              }, false);
+        this.map.addObject(group);
     }
 }
 

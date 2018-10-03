@@ -19,6 +19,11 @@ export class VoluntarioFormComponent implements OnInit {
   volForm: FormGroup;
   volList$: AngularFireList<any>;
 
+  ayudas: Ayuda[] = [
+    {value: 'Profesional', viewValue: 'Profesional'},
+    {value: 'Mano de obra', viewValue: 'Mano de obra'},
+  ];
+
   constructor(public formBuilder: FormBuilder,
     public snackBar: MatSnackBar,
     public router: Router,
@@ -36,6 +41,7 @@ export class VoluntarioFormComponent implements OnInit {
         age: [''],
         tel: [''],
         email: ['', Validators.compose([Validators.required, Validators.email])],
+        sel: [''],
         detail: [''],
         password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
       });
@@ -63,6 +69,7 @@ export class VoluntarioFormComponent implements OnInit {
           age: this.volForm.value.age,
           tel: this.volForm.value.tel,
           email: this.volForm.value.email,
+          sel: this.volForm.value.sel,
           detail: this.volForm.value.detail,
           password: this.volForm.value.password,
         };
@@ -73,10 +80,13 @@ export class VoluntarioFormComponent implements OnInit {
         this.addVol();
         this.onRegister();
         }
-      onLogout() {
-        return this.volService.logout();
-      }
+
   ngOnInit() {
   }
 
+}
+
+export interface Ayuda {
+  value: string;
+  viewValue: string;
 }

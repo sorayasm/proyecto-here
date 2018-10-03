@@ -65,6 +65,7 @@ import {
 
 // Servicios
 import { OrgService } from './servicios/org.service';
+import { RegistroComponent } from './componentes/registro/registro.component';
 
 
 const appRoutes: Routes = [
@@ -96,7 +97,8 @@ export function getOrgServiceConfigs() { }
     HomeComponent,
     LoginComponent,
     OrgFormComponent,
-    MapComponent
+    MapComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

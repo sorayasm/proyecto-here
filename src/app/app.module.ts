@@ -5,14 +5,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
-
-// import de material angular scar
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
+import { WallComponent } from './componentes/wall/wall.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +19,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material
 import {
@@ -39,8 +37,8 @@ import {
   MatExpansionModule,
   MatGridListModule,
   MatIconModule,
-  // MatInputModule,
-  // MatFormFieldModule,
+  MatInputModule,
+  MatFormFieldModule,
   MatListModule,
   MatMenuModule,
   MatNativeDateModule,
@@ -66,7 +64,7 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 
-
+// Rutas
 const appRoutes: Routes = [
   {
    path: '',
@@ -81,8 +79,8 @@ const appRoutes: Routes = [
     component: VoluntarioFormComponent
   },
   {
-    path: 'map',
-    component: MapComponent
+    path: 'wall',
+    component: WallComponent
   }
 ];
 
@@ -94,9 +92,11 @@ export function getOrgServiceConfigs() { }
     AppComponent,
     VoluntarioFormComponent,
     HomeComponent,
+    MapComponent,
+    WallComponent,
+    NavbarComponent
     LoginComponent,
     OrgFormComponent,
-    MapComponent
   ],
   imports: [
     BrowserModule,

@@ -67,24 +67,4 @@ export class OrgService {
   this.orgList$.push(org);
   }
 
-
-  login(email: string, password: string) {
-     return this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password);
-  }
-
-  isLoggedIn() {
-    if (this.orgDetails$ == null ) {
-        return false;
-      } else {
-        return true;
-      }
-    }
-
-  logout() {
-  return this.firebaseAuth.auth.signOut()
-      .then((res) => this.router.navigate(['/']));
-    }
-
 }

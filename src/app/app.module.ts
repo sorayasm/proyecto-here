@@ -79,8 +79,8 @@ const appRoutes: Routes = [
     component: VoluntarioFormComponent
   },
   {
-    path: 'wall',
-    component: WallComponent
+    path: 'navbar',
+    component: NavbarComponent,
   }
 ];
 
@@ -94,7 +94,7 @@ export function getOrgServiceConfigs() { }
     HomeComponent,
     MapComponent,
     WallComponent,
-    NavbarComponent
+    NavbarComponent,
     LoginComponent,
     OrgFormComponent,
   ],

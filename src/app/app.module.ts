@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 // Componentes
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
 import { WallComponent } from './componentes/wall/wall.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { LoginComponent } from './componentes/login/login.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -79,25 +79,24 @@ const appRoutes: Routes = [
     component: VoluntarioFormComponent
   },
   {
-    path: 'wall',
-    component: WallComponent
+    path: 'navbar',
+    component: NavbarComponent,
   }
 ];
 
 // Services
 export function getOrgServiceConfigs() { }
 
-
 @NgModule({
   declarations: [
     AppComponent,
     VoluntarioFormComponent,
-    OrgFormComponent,
     HomeComponent,
     MapComponent,
     WallComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    OrgFormComponent,
   ],
   imports: [
     BrowserModule,

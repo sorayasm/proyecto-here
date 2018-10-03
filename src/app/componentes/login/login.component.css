@@ -1,0 +1,12 @@
+.contenedor {
+    background-color: rgba(255, 167, 5, 0.747);
+    height: 30em;
+    width: 25em;
+    padding: 3em;
+    margin: 5%;
+}
+
+.titulo {
+    text-align: center;
+    padding: 1em;
+}

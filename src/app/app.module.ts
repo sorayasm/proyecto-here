@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 // Componentes
 import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { LoginComponent } from './componentes/login/login.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
@@ -63,6 +64,7 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 
+// Rutas
 const appRoutes: Routes = [
   {
    path: '',
@@ -85,16 +87,16 @@ const appRoutes: Routes = [
 // Services
 export function getOrgServiceConfigs() { }
 
-
 @NgModule({
   declarations: [
     AppComponent,
     VoluntarioFormComponent,
-    OrgFormComponent,
     HomeComponent,
     MapComponent,
     WallComponent,
     NavbarComponent
+    LoginComponent,
+    OrgFormComponent,
   ],
   imports: [
     BrowserModule,

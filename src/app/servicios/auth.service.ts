@@ -9,18 +9,16 @@ import { Observable } from 'rxjs';
 export class AuthService {
   user: Observable<firebase.User>;
 
-  constructor( private firebaseAuth:AngularFireAuth ) { 
+  constructor( private firebaseAuth: AngularFireAuth ) {
     this.user = firebaseAuth.authState;
   }
 
-
-  login(email:string, password:string){
+  login(email: string, password: string) {
     return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password);
+  }
 
-    
-}
-  logout(){
-    return this.firebaseAuth.auth.signOut()
+  logout() {
+    return this.firebaseAuth.auth.signOut();
   }
 }
 

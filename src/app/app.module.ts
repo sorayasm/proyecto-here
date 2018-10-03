@@ -63,12 +63,18 @@ import {
 
 // Servicios
 import { OrgService } from './servicios/org.service';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
 
 // Rutas
 const appRoutes: Routes = [
   {
    path: '',
    component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'org-form',
@@ -83,6 +89,7 @@ const appRoutes: Routes = [
     component: NavbarComponent,
   }
 ];
+
 
 // Services
 export function getOrgServiceConfigs() { }
@@ -145,6 +152,10 @@ export function getOrgServiceConfigs() { }
     MatTreeModule,
     MatCardModule,
     MatChipsModule,
+  ],
+  
+    exports: [
+      RouterModule
   ],
   providers: [
     OrgService,

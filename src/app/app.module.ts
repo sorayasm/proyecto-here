@@ -9,7 +9,7 @@ import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
 import { WallComponent } from './componentes/wall/wall.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
-import { WelcomeComponent } from './componentes/welcome/welcome.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -20,7 +20,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './componentes/login/login.component';
 
 // Angular Material
 import {
@@ -68,14 +67,6 @@ import { OrgService } from './servicios/org.service';
 // Rutas
 const appRoutes: Routes = [
   {
-    path: '',
-    component: WelcomeComponent
-   },
-  {
-   path: 'home',
-   component: HomeComponent
-  },
-  {
     path: 'login',
     component: LoginComponent
    },
@@ -106,7 +97,6 @@ export function getOrgServiceConfigs() { }
     MapComponent,
     WallComponent,
     NavbarComponent,
-    WelcomeComponent,
     LoginComponent
   ],
   imports: [

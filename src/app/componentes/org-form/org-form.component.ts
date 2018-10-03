@@ -7,6 +7,7 @@ import { Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireList } from '@angular/fire/database';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-org-form',
@@ -17,9 +18,11 @@ import { AngularFireList } from '@angular/fire/database';
 export class OrgFormComponent implements OnInit {
 orgForm: FormGroup;
 orgList$: AngularFireList<any>;
+events: string[] = [];
 form;
 controlNames;
 selectedNames$;
+
 
   constructor(
     public formBuilder: FormBuilder,
@@ -40,7 +43,6 @@ selectedNames$;
       contactrut: [''],
       orgname: [''],
       orgrut: [''],
-      orgmail: [''],
       orgphone: [''],
       orgdir: [''],
       orgcenters: [''],
@@ -66,19 +68,22 @@ selectedNames$;
   });
   }
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
+
   addOrg() {
     const newOrg = {
       email: this.orgForm.value.email,
-     // uid: this.firebaseAuth.auth.currentUser.uid,
+      uid: this.firebaseAuth.auth.currentUser.uid,
       contactname: this.orgForm.value.contactname,
       contactrut: this.orgForm.value.contactrut,
       orgname: this.orgForm.value.orgname,
       orgrut: this.orgForm.value.orgrut,
-      orgmail: this.orgForm.value.orgmail,
       orgphone: this.orgForm.value.orgphone,
-      // centerType: '',
-      open: this.orgForm.value.open.value,
-      orgclose: this.orgForm.value.close.value,
+      // orgcenter: '',
+      open: this.events.entries,
+      close: '',
       orgdir: this.orgForm.value.orgdir
     };
     this.orgList$.push(newOrg);
@@ -86,8 +91,9 @@ selectedNames$;
   }
 
   submit() {
-  this.addOrg();
   this.onRegister();
+  this.addOrg();
+  this.router.navigate(['/wall']);
   }
 
   ngOnInit() {

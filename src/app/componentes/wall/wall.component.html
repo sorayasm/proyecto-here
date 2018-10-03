@@ -1,8 +1,4 @@
 <app-navbar></app-navbar>
-<div style="padding: 10px 0">
-  <input type="text" placeholder="Buscar lugares..." [(ngModel)]="query" />
-  <button (click)="map.places(query)">Buscar</button>
-</div>
 <app-map #map
 class="map"
 appId="vvZ3bT5wEdEGwTxWyyVA" 
@@ -12,3 +8,7 @@ lng="-70.6506"
 width="98vw" 
 height="85vh">
 </app-map>
+<div style="padding: 10px 0">
+  <input type="text" placeholder="Buscar lugares..." [(ngModel)]="query" />
+  <button (click)="map.places(query)">Buscar</button>
+</div>

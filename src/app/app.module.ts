@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 
-// import de material angular scar
+// import de material angular 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -66,12 +66,17 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
 
 
 const appRoutes: Routes = [
   {
    path: '',
    component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'org-form',
@@ -87,6 +92,7 @@ const appRoutes: Routes = [
   }
 ];
 
+
 // Services
 export function getOrgServiceConfigs() { }
 
@@ -98,7 +104,8 @@ export function getOrgServiceConfigs() { }
     LoginComponent,
     OrgFormComponent,
     MapComponent,
-    RegistroComponent
+    RegistroComponent,
+    SolicitanteComponent
   ],
   imports: [
     BrowserModule,
@@ -147,6 +154,10 @@ export function getOrgServiceConfigs() { }
     MatTreeModule,
     MatCardModule,
     MatChipsModule,
+  ],
+  
+    exports: [
+      RouterModule
   ],
   providers: [
     OrgService,

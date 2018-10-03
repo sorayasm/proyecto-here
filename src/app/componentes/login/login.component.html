@@ -22,7 +22,7 @@
     </div>
         <div class="botones">
  <!--Ejecutará ngSubmit -> onRegister puesto en la etiqueta form-->
-        <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
+        <button routerLInk = '/login' type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
  <!--Ejecutará onLogin-->
         </div>
   </form>

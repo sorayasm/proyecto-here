@@ -77,6 +77,10 @@ const appRoutes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'registro',
+    component: RegistroComponent
+  },
+  {
     path: 'org-form',
     component: OrgFormComponent
   },
@@ -104,6 +108,7 @@ export function getOrgServiceConfigs() { }
     NavbarComponent,
     LoginComponent,
     OrgFormComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

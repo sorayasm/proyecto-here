@@ -34,39 +34,37 @@
       <input matInput #orgdir type='text' formControlName='orgdir' placeholder='Dirección de la organización'>
     </mat-form-field>
     <p>Selecciona el tipo de centro de ayuda que corresponde a tu organización:</p>
-    <ng-container [formGroup]="form">
-      <mat-checkbox *ngFor="let controlName of controlNames" [formControlName]="controlName">{{controlName}}</mat-checkbox>
-    </ng-container>
-    <mat-checkbox class="margin">Refugio</mat-checkbox><br>
-    <mat-checkbox class="margin">Centro de Acopio</mat-checkbox><br>
-    <mat-checkbox class="margin">Transporte de Ayuda</mat-checkbox><br>
-    <mat-checkbox class="margin">Entrega de Alimentos</mat-checkbox><br>
-    <mat-checkbox class="margin">Primeros Auxilios</mat-checkbox><br>
+    <mat-checkbox class="margin" #checkRefugio formControlName="checkRefugio">Refugio</mat-checkbox><br>
+    <mat-checkbox class="margin" #checkCentro formControlName="checkCentro">Centro de Acopio</mat-checkbox><br>
+    <mat-checkbox class="margin" #checkTransporte formControlName="checkTransporte">Transporte de Ayuda</mat-checkbox><br>
+    <mat-checkbox class="margin" #checkEntrega formControlName="checkEntrega">Entrega de Alimentos</mat-checkbox><br>
+    <mat-checkbox class="margin" #checkPrimeros formControlName="checkPrimeros">Primeros Auxilios</mat-checkbox><br>
     <br>
     <p>Indicanos cuánto tiempo estará disponible el Centro de ayuda de tu organización</p>
-    <!-- ngb-datepicker #dp (select)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t">
-</ngb-datepicker>
-
-<ng-template #t let-date="date" let-focused="focused">
-  <span class="custom-day"
-        [class.focused]="focused"
-        [class.range]="isRange(date)"
-        [class.faded]="isHovered(date) || isInside(date)"
-        (mouseenter)="hoveredDate = date"
-        (mouseleave)="hoveredDate = null">
-    {{ date.day }}
-  </span>
-</ng-template -->
+    <mat-form-field>
+      <input matInput [matDatepicker]='open' placeholder='Elige una fecha de apertura de Centro de Ayuda'>
+      <mat-datepicker-toggle matSuffix [for]='open'></mat-datepicker-toggle>
+      <mat-datepicker #open></mat-datepicker>
+    </mat-form-field> 
+    <br>
+    <mat-form-field>
+      <input matInput [matDatepicker]='close' placeholder='Elige una fecha de cierre de Centro de Ayuda'>
+      <mat-datepicker-toggle matSuffix [for]='close'></mat-datepicker-toggle>
+      <mat-datepicker #close></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #nvol type='text' formControlName='nvol' placeholder='¿Cuantos voluntarios necesita?'>
+    </mat-form-field> 
     <p>Otra información relevante:</p>
     <mat-form-field>
       <textarea matInput #orgother type='textarea' formControlName='orgother' placeholder='Otra información'></textarea>
     </mat-form-field>          
     <p>Para completar el registro acepta los siguientes convenios (obligatorio):</p>
-    <mat-checkbox>Política de Responsabilidad de Centro de ayuda.</mat-checkbox>
+    <mat-checkbox #check1 formControlName="check1">Política de Responsabilidad de Centro de ayuda.</mat-checkbox>
     <br>
-    <mat-checkbox>Políticas de privacidad de datos.</mat-checkbox>
+    <mat-checkbox #check2 formControlName="check2">Políticas de privacidad de datos.</mat-checkbox>
     <br>
-    <mat-checkbox>Convenio de Políticas de nuestra web.</mat-checkbox>
+    <mat-checkbox #check3 formControlName="check3">Convenio de Políticas de nuestra web.</mat-checkbox>
     <br>
     <button mat-button type='submit' [disabled]='!orgForm.valid'>¡Enviar registro!</button>
   </form>

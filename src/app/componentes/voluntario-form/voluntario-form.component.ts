@@ -44,6 +44,9 @@ export class VoluntarioFormComponent implements OnInit {
         sel: [''],
         detail: [''],
         password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+        check1 : [''],
+        check2: [''],
+        check3: ['']
       });
     }
     onRegister() {
@@ -72,6 +75,9 @@ export class VoluntarioFormComponent implements OnInit {
           sel: this.volForm.value.sel,
           detail: this.volForm.value.detail,
           password: this.volForm.value.password,
+          check1: this.volForm.value.check1,
+          check2: this.volForm.value.check2,
+          check3: this.volForm.value.check3
         };
         this.volList$.push(newVol);
         console.log('agregado nuevo voluntario ');

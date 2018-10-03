@@ -3,10 +3,6 @@ import { containsElement } from '@angular/animations/browser/src/render/shared';
 
 declare var H: any;
 
-
-
-  
-
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -98,20 +94,13 @@ export class MapComponent implements OnInit {
     }
 
     private addMarkers() {
-        const toronto = new H.map.Marker({lat: 43.7,  lng: -79.4}),
+        const toronto = new H.map.Marker({lat: 43.7,  lng: -79.4}, {title: 'holas', vicinity: ' holas'}),
             boston = new H.map.Marker({lat: 42.35805, lng: -71.0636}),
             washington = new H.map.Marker({lat: 38.8951, lng: -77.0366}),
             group = new H.map.Group();
         group.addObjects([toronto, boston, washington]);
-        // tslint:disable-next-line:max-line-length
-        group.setData(html);
-        group.addEventListener('tap', function (evt) {
-                let bubble =  new H.ui.InfoBubble(evt.target.getPosition(), {
-                  content: evt.target.getData()
-                });
-                this.ui.addBubble(bubble);
-              }, false);
         this.map.addObject(group);
+
     }
 }
 

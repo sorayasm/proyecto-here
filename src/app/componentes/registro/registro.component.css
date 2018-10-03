@@ -1,0 +1,12 @@
+.contenedor {
+    background-color: #E5E5E5;
+    width: 25em;
+    height: 30em;
+    margin: 5%;
+    padding: 4em;
+    text-align: center;
+   }
+
+   h6 {
+       padding: 2em;
+   }

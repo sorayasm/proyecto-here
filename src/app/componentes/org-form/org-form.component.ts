@@ -45,10 +45,18 @@ selectedNames$;
       orgrut: [''],
       orgphone: [''],
       orgdir: [''],
-      orgcenters: [''],
+      checkRefugio: [''],
+      checkCentro: [''],
+      checkTransporte: [''],
+      checkEntrega: [''],
+      checkPrimeros: [''],
       open: [''],
       close: [''],
-      orgother: ['']
+      nvol: [''],
+      orgother: [''],
+      check1 : [''],
+      check2: [''],
+      check3: ['']
     });
   }
 
@@ -81,10 +89,18 @@ selectedNames$;
       orgname: this.orgForm.value.orgname,
       orgrut: this.orgForm.value.orgrut,
       orgphone: this.orgForm.value.orgphone,
-      // orgcenter: '',
-      open: this.events.entries,
-      close: '',
-      orgdir: this.orgForm.value.orgdir
+      orgdir: this.orgForm.value.orgdir,
+      checkRefugio: this.orgForm.value.checkRefugio,
+      checkCentro: this.orgForm.value.checkCentro,
+      checkTransporte: this.orgForm.value.checkTransporte,
+      checkCEntrega: this.orgForm.value.checkEntrega,
+      checkPrimeros: this.orgForm.value.checkPrimeros,
+      open: this.orgForm.value.open,
+      close: this.orgForm.value.close,
+      nvol: this.orgForm.value.nvol,
+      check1: this.orgForm.value.check1,
+      check2: this.orgForm.value.check2,
+      check3: this.orgForm.value.check3
     };
     this.orgList$.push(newOrg);
     console.log('agregada nueva org');

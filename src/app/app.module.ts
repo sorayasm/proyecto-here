@@ -9,6 +9,8 @@ import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntari
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -63,12 +65,25 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 
+
 // Rutas
 const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+   },
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },
   {
     path: 'login',
     component: LoginComponent
    },
+  {
+    path: 'solicitante',
+    component: SolicitanteComponent
+  },
   {
     path: 'org-form',
     component: OrgFormComponent
@@ -83,6 +98,7 @@ const appRoutes: Routes = [
   }
 ];
 
+
 // Services
 export function getOrgServiceConfigs() { }
 
@@ -95,6 +111,8 @@ export function getOrgServiceConfigs() { }
     NavbarComponent,
     LoginComponent,
     OrgFormComponent,
+    RegistroComponent,
+    SolicitanteComponent
   ],
   imports: [
     BrowserModule,
@@ -143,6 +161,9 @@ export function getOrgServiceConfigs() { }
     MatTreeModule,
     MatCardModule,
     MatChipsModule,
+  ],
+    exports: [
+      RouterModule
   ],
   providers: [
     OrgService,

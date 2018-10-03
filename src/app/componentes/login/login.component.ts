@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../servicios/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   authForm: FormGroup;
 
   // Solicitamos en el constructor todas las cosas necesarias
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, public snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
     this.createAuthForm();
   }
 
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.authForm.value.email, this.authForm.value.password)
       .then(() => {
         // Login exitoso, así que celebramos con el usuario (?)
+        this.router.navigate(['/navbar']);
       })
       .catch(() => {
         // Algo salió mal, avisemos mejor para que reintente
@@ -54,6 +56,7 @@ export class LoginComponent implements OnInit {
     this.authService.logout()
       .then(() => {
         // Logout exitoso, adios usuario!
+        this.router.navigate(['']);
       })
       .catch(() => {
         // Algo salió mal, avisemos mejor para que reintente

@@ -53,7 +53,7 @@ export class MapComponent implements OnInit {
             this.mapElement.nativeElement,
             defaultLayers.normal.map,
             {
-                zoom: 10,
+                zoom: 5,
                 center: { lat: this.lat, lng: this.lng }
             }
         );
@@ -80,7 +80,7 @@ export class MapComponent implements OnInit {
     private dropMarker(coordinates: any, data: any) {
         // tslint:disable-next-line:prefer-const
         let marker = new H.map.Marker(coordinates);
-        marker.setData(`<p class='marker'>` + data.title + `<br>` + data.vicinity + `</p>`);
+        marker.setData(`<p class='marker'>` + data.title + `<br>` + data.vicinity +`<br> Centro de Acopio` + `</p>`);
         marker.addEventListener('tap', event => {
         // tslint:disable-next-line:prefer-const
             let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {

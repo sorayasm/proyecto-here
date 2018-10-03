@@ -8,7 +8,6 @@ import { LoginComponent } from './componentes/login/login.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
-import { WallComponent } from './componentes/wall/wall.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 // funcionalidades y estilos
@@ -93,7 +92,6 @@ export function getOrgServiceConfigs() { }
     VoluntarioFormComponent,
     HomeComponent,
     MapComponent,
-    WallComponent,
     NavbarComponent,
     LoginComponent,
     OrgFormComponent,

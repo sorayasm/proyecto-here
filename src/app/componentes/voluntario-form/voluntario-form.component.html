@@ -18,10 +18,17 @@
   </mat-form-field>
   <h4>Datos Ayuda</h4>
   <mat-form-field>
-      <input matInput placeholder="Telefono de contacto" #tel formControlName='tel' >
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="email" #email formControlName='email' placeholder="mail">
+    <input matInput placeholder="Telefono de contacto" #tel formControlName='tel' >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="email" #email formControlName='email' placeholder="mail">
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select #sel formControlName="sel" placeholder="Selecciona un tipo de ayuda">
+        <mat-option *ngFor="let ayuda of ayudas" [value]="ayuda.value">
+          {{ayuda.viewValue}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   <mat-form-field>
     <textarea matInput placeholder="Detalla el tipo de ayuda que vas a prestar" #datail formControlName='detail'></textarea>

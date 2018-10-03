@@ -91,6 +91,10 @@ const appRoutes: Routes = [
   {
     path: 'navbar',
     component: NavbarComponent,
+  },
+  {
+    path: 'solicitante',
+    component: SolicitanteComponent,
   }
 ];
 
@@ -158,7 +162,6 @@ export function getOrgServiceConfigs() { }
     MatCardModule,
     MatChipsModule,
   ],
-  
     exports: [
       RouterModule
   ],

@@ -5,16 +5,15 @@
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>
           <app-org-profile></app-org-profile>
           <br>
-          <button id="cerrar" mat-button (click)="onLogout()">Cerrar Sesión</button>
+          <button class="boton" id="cerrar" mat-button (click)="onLogout()">Cerrar Sesión</button>
         </mat-nav-list>
       </mat-sidenav>
-  
       <mat-sidenav-content>
           <app-map #map
           class="map"

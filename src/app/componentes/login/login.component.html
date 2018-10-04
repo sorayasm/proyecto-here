@@ -3,12 +3,14 @@
     <div class="row">
       <div class=".col-sm-12">
         <div class="contenedor">
-            <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
-            <div *ngIf="authService.user | async">
-              <p> Bienvenido : {{((authService.user | async) || {}).email}}</p>
-              <button type="button" (click)="onLogout()">Logout</button>
-            </div>
             <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
+              <mat-form-field>
+                <mat-select #sel formControlName="sel" placeholder="Elige tu perfil">
+                  <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
+                    {{perfil.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
               <div class="input">
                 <input type="email" formControlName="email">
               </div>
@@ -16,12 +18,12 @@
                   <input type="password" formControlName="password">
               </div>
               <div class="botones">
-                  <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-warning">Log - in</button>
+                  <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
               </div>
-            </form>
         </div>
       </div>
     </div>   
   </div> 
 </section>
+
 

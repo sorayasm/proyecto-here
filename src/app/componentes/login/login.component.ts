@@ -15,8 +15,14 @@ import { Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   authForm: FormGroup;
 
+  perfiles: Perfil[] = [
+    {value: 'orgs', viewValue: 'Organización'},
+    {value: 'vol', viewValue: 'Voluntario'},
+    {value: 'auth', viewValue: 'Solicitante'},
+  ];
+
   // Solicitamos en el constructor todas las cosas necesarias
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
+  constructor(private formBuilder: FormBuilder, public authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
     this.createAuthForm();
   }
 
@@ -67,4 +73,9 @@ export class LoginComponent implements OnInit {
           });
       });
   }
+}
+
+export interface Perfil {
+  value: string;
+  viewValue: string;
 }

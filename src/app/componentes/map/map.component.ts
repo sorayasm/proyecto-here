@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { containsElement } from '@angular/animations/browser/src/render/shared';
 
 declare var H: any;
 
@@ -14,6 +13,7 @@ export class MapComponent implements OnInit {
     public map: any;
     private ui: any;
     private search: any;
+    public currentPosition: any;
 
     @ViewChild('map')
     public mapElement: ElementRef;
@@ -44,17 +44,26 @@ export class MapComponent implements OnInit {
             'app_code': this.appCode
         });
         this.search = new H.places.Search(this.platform.getPlacesService());
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((showPosition) => {
+              this.lat = showPosition.coords.latitude;
+              this.lng = showPosition.coords.longitude;
+              this.mapLocation();
+            });
+        } else {
+        alert('La geolocalización no funciona en este navegador.');
+        }
     }
 
     // tslint:disable-next-line:use-life-cycle-interface
-    public ngAfterViewInit() {
+    public mapLocation() {
        // tslint:disable-next-line:prefer-const
         let defaultLayers = this.platform.createDefaultLayers();
         this.map = new H.Map(
             this.mapElement.nativeElement,
             defaultLayers.normal.map,
             {
-                zoom: 12,
+                zoom: 13,
                 center: { lat: this.lat, lng: this.lng }
             }
         );
@@ -94,43 +103,28 @@ export class MapComponent implements OnInit {
     }
 
     private addMarkers() {
-        const toronto = new H.map.Marker({lat: 43.7,  lng: -79.4}, {title: 'holas', vicinity: ' holas'}),
-            boston = new H.map.Marker({lat: 42.35805, lng: -71.0636}),
-            washington = new H.map.Marker({lat: 38.8951, lng: -77.0366}),
-            group = new H.map.Group();
-        group.addObjects([toronto, boston, washington]);
+    const marker1 = new H.map.Marker ({lat: -33.41895,  lng: -70.64203}),
+          marker2 = new H.map.Marker ({lat: -33.435130, lng: -70.643468}),
+          marker3 = new H.map.Marker ({lat: -33.433419, lng: -70.650996}),
+          marker4 = new H.map.Marker ({lat: -33.439158, lng: -70.644000}),
+          marker5 = new H.map.Marker ({lat: -33.438942, lng: -70.641160}),
+          marker6 = new H.map.Marker ({lat: -33.430902, lng: -70.634375}),
+        group = new H.map.Group();
+        group.addObjects([marker1, marker2, marker3, marker4, marker5, marker6]);
         this.map.addObject(group);
-
-    }
+        marker1.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker2.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker3.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker4.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker5.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker6.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        group.addEventListener('tap', event => {
+            // tslint:disable-next-line:prefer-const
+                let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
+                    content: event.target.getData()
+                });
+                this.ui.addBubble(bubble);
+            }, false);
+        }
 }
-
-/*
-// funcion para la localizacion HTML5
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Estas aquí.');
-        infoWindow.open(map);
-        map.setCenter(pos);
-    }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-    });
-} else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-}
-
-// funcion para la localizacion del usuario
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: La geolocalización falló.' :
-        'Error: Tu navegador no soporta la geolocalización.');
-    infoWindow.open(map);
-} */
 

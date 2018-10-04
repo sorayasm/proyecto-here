@@ -56,7 +56,7 @@ export class VolService {
         console.log('Something went wrong:', err.message);
       });
   }
-  createOrg(org: VolProfile) {
-    this.volList$.push(org);
+  createVol(vol: VolProfile) {
+    this.volList$.push(vol);
     }
 }

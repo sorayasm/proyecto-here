@@ -26,7 +26,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OrgProfileComponent } from './componentes/org-profile/org-profile.component';
 
 // Angular Material
 import {
@@ -73,8 +72,6 @@ import { OrgService } from './servicios/org.service';
 import { VolService } from './servicios/vol.service';
 import { AuthService } from './servicios/auth.service';
 
-
-
 // Rutas
 const appRoutes: Routes = [
   {
@@ -114,7 +111,6 @@ const appRoutes: Routes = [
     component: SolicitanteComponent,
   }
 ];
-
 
 // Services
 export function getOrgServiceConfigs() { }

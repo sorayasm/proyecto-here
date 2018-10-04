@@ -3,11 +3,17 @@
 
 .H_ib_body {
     width: 150px;
-    line-height: 18px;
+    line-height: 8px;
+    background-color: beige;
 }
 
 .H_ib_body p{
     font-size: 11px;
+}
+
+.H_ib_body a{
+    font-size: 11px;
+    color: #ef6c00;
 }
 
 body{

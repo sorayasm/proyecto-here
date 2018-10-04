@@ -85,6 +85,7 @@ export class VoluntarioFormComponent implements OnInit {
       submit() {
         this.addVol();
         this.onRegister();
+        this.router.navigate(['/menu-voluntario']);
         }
 
   ngOnInit() {

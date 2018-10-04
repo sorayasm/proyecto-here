@@ -103,62 +103,63 @@ export class MapComponent implements OnInit {
     }
 
     private addMarkers() {
-    const marker1 = new H.map.Marker ({lat: -33.41895,  lng: -70.64203}),
-          marker2 = new H.map.Marker ({lat: -33.435130, lng: -70.643468}),
-          marker3 = new H.map.Marker ({lat: -33.433419, lng: -70.650996}),
-          marker4 = new H.map.Marker ({lat: -33.439158, lng: -70.644000}),
-          marker5 = new H.map.Marker ({lat: -33.438942, lng: -70.641160}),
-          marker6 = new H.map.Marker ({lat: -33.430902, lng: -70.634375}),
+    const marker1 = new H.map.Marker ({lat: -33.430531, lng: -70.649787}),
+          marker2 = new H.map.Marker ({lat: -33.439578, lng: -70.657415}),
+          marker3 = new H.map.Marker ({lat: -33.424611, lng: -70.644079}),
+          marker4 = new H.map.Marker ({lat: -33.420956, lng: -70.653184}),
+          marker5 = new H.map.Marker ({lat: -33.429782, lng: -70.647036}),
+          marker6 = new H.map.Marker ({lat: -33.424559, lng: -70.650866}),
         group = new H.map.Group();
         group.addObjects([marker1, marker2, marker3, marker4, marker5, marker6]);
         this.map.addObject(group);
         marker1.setData(`
-        <div class='modal'><p>Centro de Acopio</p>
-        <p>Nombre del Lugar</p>
-        <p>Dirección</p>
-        <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a></div>
+        <p>Centro de Acopio</p>
+        <p>Vega Central</p>
+        <p>Antonia López de Bello 743, Providencia.</p>
+        <a href="mailto:correo@correo.cl">organizacion@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
         `);
         marker2.setData(`
-        <div class='modal'><p>Centro de Acopio</p>
-        <p>Nombre del Lugar</p>
-        <p>Dirección</p>
-        <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a></div>
+        <p>Ayuda de Tranporte</p>
+        <p>Liceo Javiera Carrera</p>
+        <p>Compañía de Jesús 1484, Santiago.</p>
+        <a href="mailto:correo@correo.cl">liceo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
         `);
         marker3.setData(`
-        <div class='modal'><p>Centro de Acopio</p>
-        <p>Nombre del Lugar</p>
-        <p>Dirección</p>
-        <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a></div>
+        <p>Centro de Acopio</p>
+        <p>Academia de Humanidades</p>
+        <p>Rapa Nui, Recoleta.</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
         `);
         marker4.setData(`
-        <div class='modal'><p>Centro de Acopio</p>
-        <p>Nombre del Lugar</p>
-        <p>Dirección</p>
-        <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a></div>
+        <p>Capacitación de Primeros Auxilios</p>
+        <p>Universidad de Chile</p>
+        <p>Avenida Santos Dumont 1052, Independencia.</p>
+        <a href="mailto:correo@correo.cl">uchileo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
         `);
         marker5.setData(`
-        <div class='modal'><p>Centro de Acopio</p>
-        <p>Nombre del Lugar</p>
-        <p>Dirección</p>
-        <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a></div>
+        <p>Centro de Acopio</p>
+        <p>Hao Wei</p>
+        <p>Avenida Recoleta 281, Recoleta.</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
         `);
         marker6.setData(`
-        <div class='modal'><p>Centro de Acopio</p>
-        <p>Nombre del Lugar</p>
-        <p>Dirección</p>
-        <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a></div>
+        <p>Coordinación de voluntarios</p>
+        <p>Distribuidora Monterrey</p>
+        <p>Avenida La Paz 535, Independencia.</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
         `);
         group.addEventListener('tap', event => {
             // tslint:disable-next-line:prefer-const
                 let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
                     content: event.target.getData()
                 });
+                this.ui.getBubbles().forEach(bub => this.ui.removeBubble(bub));
                 this.ui.addBubble(bubble);
             }, false);
         }

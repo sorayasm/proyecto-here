@@ -1,7 +1,7 @@
-<div *ngFor="let auth of auth$ | async" class="wall">
+<div *ngFor="let user of users$ | async" class="wall">
     <mat-card class="card">
       <mat-card-content>
-          <p>{{auth.email}}<p>
+          <p>Bienvenido {{user.email}}<p>
       </mat-card-content>
     </mat-card>
   </div>

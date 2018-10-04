@@ -4,6 +4,9 @@ import { AuthService } from '../../servicios/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireList } from '@angular/fire/database';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-solicitante',
@@ -12,15 +15,18 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class SolicitanteComponent implements OnInit {
   authForm: FormGroup;
+  authList$: AngularFireList<any>;
 
   constructor(public formBuilder: FormBuilder,
    public authService: AuthService,
    public snackBar: MatSnackBar,
    public router: Router,
-   public firebaseAuth: AngularFireAuth) {
+   public firebaseAuth: AngularFireAuth,
+   public database: AngularFireDatabase) {
    const user = this.firebaseAuth.auth.currentUser;
    // console.log(user);
    this.createAuthForm();
+   this.authList$ = this.database.list('/auth');
   }
 
   ngOnInit() {
@@ -48,6 +54,19 @@ export class SolicitanteComponent implements OnInit {
      });
  });
  }
+
+ addAuth() {
+  const newAuth = {
+    email: this.authForm.value.email,
+    password: this.authForm.value.password,
+  };
+  this.authList$.push(newAuth);
+  console.log('agregado nuevo voluntario ');
+}
+submit() {
+  this.addAuth();
+  this.onRegister();
+  }
 
  onLogout() {
   return this.authService.logout();

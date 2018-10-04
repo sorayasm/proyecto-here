@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { containsElement } from '@angular/animations/browser/src/render/shared';
+import { DataSource } from '@angular/cdk/table';
 
 declare var H: any;
 
@@ -104,12 +105,13 @@ export class MapComponent implements OnInit {
     }
 
     private addMarkers() {
-        const toronto = new H.map.Marker({lat: 43.7,  lng: -79.4}, {title: 'holas', vicinity: ' holas'}),
+        const marker1 = new H.map.Marker({lat: -33.41895,  lng: -70.64203}),
             boston = new H.map.Marker({lat: 42.35805, lng: -71.0636}),
             washington = new H.map.Marker({lat: 38.8951, lng: -77.0366}),
             group = new H.map.Group();
-        group.addObjects([toronto, boston, washington]);
+        group.addObjects([marker1, boston, washington]);
         this.map.addObject(group);
-
+        this.dropMarker(group, group);
+        }
     }
 }

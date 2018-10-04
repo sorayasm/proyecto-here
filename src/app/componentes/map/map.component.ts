@@ -1,6 +1,4 @@
 import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { containsElement } from '@angular/animations/browser/src/render/shared';
-import { DataSource } from '@angular/cdk/table';
 
 declare var H: any;
 
@@ -54,7 +52,7 @@ export class MapComponent implements OnInit {
             });
         } else {
         alert('La geolocalización no funciona en este navegador.');
-    }
+        }
     }
 
     // tslint:disable-next-line:use-life-cycle-interface
@@ -65,7 +63,7 @@ export class MapComponent implements OnInit {
             this.mapElement.nativeElement,
             defaultLayers.normal.map,
             {
-                zoom: 15,
+                zoom: 13,
                 center: { lat: this.lat, lng: this.lng }
             }
         );
@@ -105,13 +103,28 @@ export class MapComponent implements OnInit {
     }
 
     private addMarkers() {
-        const marker1 = new H.map.Marker({lat: -33.41895,  lng: -70.64203}),
-            boston = new H.map.Marker({lat: 42.35805, lng: -71.0636}),
-            washington = new H.map.Marker({lat: 38.8951, lng: -77.0366}),
-            group = new H.map.Group();
-        group.addObjects([marker1, boston, washington]);
+    const marker1 = new H.map.Marker ({lat: -33.41895,  lng: -70.64203}),
+          marker2 = new H.map.Marker ({lat: -33.435130, lng: -70.643468}),
+          marker3 = new H.map.Marker ({lat: -33.433419, lng: -70.650996}),
+          marker4 = new H.map.Marker ({lat: -33.439158, lng: -70.644000}),
+          marker5 = new H.map.Marker ({lat: -33.438942, lng: -70.641160}),
+          marker6 = new H.map.Marker ({lat: -33.430902, lng: -70.634375}),
+        group = new H.map.Group();
+        group.addObjects([marker1, marker2, marker3, marker4, marker5, marker6]);
         this.map.addObject(group);
-        this.dropMarker(group, group);
+        marker1.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker2.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker3.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker4.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker5.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker6.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        group.addEventListener('tap', event => {
+            // tslint:disable-next-line:prefer-const
+                let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {
+                    content: event.target.getData()
+                });
+                this.ui.addBubble(bubble);
+            }, false);
         }
-    }
 }
+

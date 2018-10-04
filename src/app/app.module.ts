@@ -8,7 +8,6 @@ import { LoginComponent } from './componentes/login/login.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuSolicitanteComponent } from './componentes/menu-solicitante/menu-solicitante.component';
@@ -119,7 +118,6 @@ export function getOrgServiceConfigs() { }
     VoluntarioFormComponent,
     HomeComponent,
     MapComponent,
-    NavbarComponent,
     LoginComponent,
     OrgFormComponent,
     RegistroComponent,

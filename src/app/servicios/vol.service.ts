@@ -59,21 +59,4 @@ export class VolService {
   createOrg(org: VolProfile) {
     this.volList$.push(org);
     }
-    login(email: string, password: string) {
-      return this.firebaseAuth
-       .auth
-       .signInWithEmailAndPassword(email, password);
-   }
-   isLoggedIn() {
-    if (this.volDetails$ == null ) {
-        return false;
-      } else {
-        return true;
-      }
-    }
-    logout() {
-      return this.firebaseAuth.auth.signOut()
-          .then((res) => this.router.navigate(['/']));
-        }
-
 }

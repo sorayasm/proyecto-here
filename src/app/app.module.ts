@@ -8,13 +8,14 @@ import { LoginComponent } from './componentes/login/login.component';
 import { VoluntarioFormComponent } from './componentes/voluntario-form/voluntario-form.component';
 import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
-import { WallComponent } from './componentes/wall/wall.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule, FirebaseOptionsToken, FirebaseNameOrConfigToken } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -63,22 +64,27 @@ import {
 
 // Servicios
 import { OrgService } from './servicios/org.service';
-import { RegistroComponent } from './componentes/registro/registro.component';
-import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
+import { AuthService } from './servicios/auth.service';
+import { VolService } from './servicios/vol.service';
+
 
 // Rutas
 const appRoutes: Routes = [
   {
-   path: '',
-   component: HomeComponent
+    path: '',
+    component: HomeComponent
+   },
+  {
+    path: 'registro',
+    component: RegistroComponent
   },
   {
     path: 'login',
     component: LoginComponent
-  },
+   },
   {
-    path: 'registro',
-    component: RegistroComponent
+    path: 'solicitante',
+    component: SolicitanteComponent
   },
   {
     path: 'org-form',
@@ -95,6 +101,10 @@ const appRoutes: Routes = [
   {
     path: 'navbar',
     component: NavbarComponent,
+  },
+  {
+    path: 'solicitante',
+    component: SolicitanteComponent,
   }
 ];
 
@@ -108,7 +118,6 @@ export function getOrgServiceConfigs() { }
     VoluntarioFormComponent,
     HomeComponent,
     MapComponent,
-    WallComponent,
     NavbarComponent,
     LoginComponent,
     OrgFormComponent,
@@ -118,7 +127,7 @@ export function getOrgServiceConfigs() { }
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase, 'proyecto-here'),
+    AngularFireModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
@@ -163,13 +172,15 @@ export function getOrgServiceConfigs() { }
     MatCardModule,
     MatChipsModule,
   ],
-  
     exports: [
       RouterModule
   ],
   providers: [
     OrgService,
-    HomeComponent
+    AuthService,
+    VolService,
+    { provide: FirebaseOptionsToken, useValue: environment.firebase },
+    { provide: FirebaseNameOrConfigToken, useValue: 'proyecto-here' }
   ],
 
   bootstrap: [AppComponent]

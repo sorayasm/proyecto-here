@@ -7,6 +7,7 @@ import { Router} from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireList } from '@angular/fire/database';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-org-form',
@@ -17,9 +18,11 @@ import { AngularFireList } from '@angular/fire/database';
 export class OrgFormComponent implements OnInit {
 orgForm: FormGroup;
 orgList$: AngularFireList<any>;
+events: string[] = [];
 form;
 controlNames;
 selectedNames$;
+
 
   constructor(
     public formBuilder: FormBuilder,
@@ -40,13 +43,20 @@ selectedNames$;
       contactrut: [''],
       orgname: [''],
       orgrut: [''],
-      orgmail: [''],
       orgphone: [''],
       orgdir: [''],
-      orgcenters: [''],
+      checkRefugio: [''],
+      checkCentro: [''],
+      checkTransporte: [''],
+      checkEntrega: [''],
+      checkPrimeros: [''],
       open: [''],
       close: [''],
-      orgother: ['']
+      nvol: [''],
+      orgother: [''],
+      check1 : [''],
+      check2: [''],
+      check3: ['']
     });
   }
 
@@ -66,28 +76,40 @@ selectedNames$;
   });
   }
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
+
   addOrg() {
     const newOrg = {
       email: this.orgForm.value.email,
-     // uid: this.firebaseAuth.auth.currentUser.uid,
+      uid: this.firebaseAuth.auth.currentUser.uid,
       contactname: this.orgForm.value.contactname,
       contactrut: this.orgForm.value.contactrut,
       orgname: this.orgForm.value.orgname,
       orgrut: this.orgForm.value.orgrut,
-      orgmail: this.orgForm.value.orgmail,
       orgphone: this.orgForm.value.orgphone,
-      // centerType: '',
-      open: this.orgForm.value.open.value,
-      orgclose: this.orgForm.value.close.value,
-      orgdir: this.orgForm.value.orgdir
+      orgdir: this.orgForm.value.orgdir,
+      checkRefugio: this.orgForm.value.checkRefugio,
+      checkCentro: this.orgForm.value.checkCentro,
+      checkTransporte: this.orgForm.value.checkTransporte,
+      checkCEntrega: this.orgForm.value.checkEntrega,
+      checkPrimeros: this.orgForm.value.checkPrimeros,
+      open: this.orgForm.value.open,
+      close: this.orgForm.value.close,
+      nvol: this.orgForm.value.nvol,
+      check1: this.orgForm.value.check1,
+      check2: this.orgForm.value.check2,
+      check3: this.orgForm.value.check3
     };
     this.orgList$.push(newOrg);
     console.log('agregada nueva org');
   }
 
   submit() {
-  this.addOrg();
   this.onRegister();
+  this.addOrg();
+  this.router.navigate(['/wall']);
   }
 
   ngOnInit() {

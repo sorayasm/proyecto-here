@@ -130,7 +130,7 @@ export function getOrgServiceConfigs() { }
     MenuOrgComponent,
     OrgProfileComponent,
     VolProfileComponent,
-    SolProfileComponent
+    SolProfileComponent,
   ],
   imports: [
     BrowserModule,

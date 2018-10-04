@@ -1,14 +1,25 @@
-<div class="mat-form-field">
-<form [formGroup]='authForm' (ngSubmit)='submit()'>
-  <h2>¡Te invitamos a revisar la ayuda más cercana!</h2>
-  <h5>Llenando este formulario podràs tener acceso a los centros de acopio màs cercanos</h5>
-  <mat-form-field>
-      <input matInput type="email" #email formControlName='email' placeholder="mail">
-  </mat-form-field>
-  <mat-form-field>
-      <input matInput #password type='password' formControlName='password' placeholder='Contraseña'>
-  </mat-form-field>
-  <button mat-button type='submit'>¡Enviar registro!</button> <br>
-  <button mat-button routerLink='/login'>Ir a Login</button>
-  </form>
-</div>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class=".col-sm-1">
+        <div class="formulario">
+          <form [formGroup]='authForm' (ngSubmit)='onRegister()'>
+            <h6>Por favor ingresa tus datos...</h6>
+            <p>Ingresa un correo: </p>
+            <input type='email' formControlName='email'><br> 
+            <p>Ingresa una contraseña: </p>
+            <input type='password' formControlName='password'>
+            <div class="botones">
+              <button mat-button type='submit'>Registrarse</button>
+            </div>
+            <div class="botones">
+              <button mat-button routerLink='/login'>Ir a Login</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -3,6 +3,7 @@
 
 .H_ib_body {
     width: 150px;
+    line-height: 18px;
 }
 
 .H_ib_body p{
@@ -12,6 +13,11 @@
 body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 10px;
+}
+
+.btn-search {
+    padding: 10px;
+    margin: 10px auto;
 }
 
 md-icon {

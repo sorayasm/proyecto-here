@@ -113,46 +113,46 @@ export class MapComponent implements OnInit {
         group.addObjects([marker1, marker2, marker3, marker4, marker5, marker6]);
         this.map.addObject(group);
         marker1.setData(`
-        <p>Centro de Acopio</p>
+        <div class='modal'><p>Centro de Acopio</p>
         <p>Nombre del Lugar</p>
         <p>Dirección</p>
         <a href="">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a>
+        <a href="tel:+56000000000">+569123456789</a></div>
         `);
         marker2.setData(`
-        <p>Centro de Acopio</p>
+        <div class='modal'><p>Centro de Acopio</p>
         <p>Nombre del Lugar</p>
         <p>Dirección</p>
-        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a>
+        <a href="">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a></div>
         `);
         marker3.setData(`
-        <p>Centro de Acopio</p>
+        <div class='modal'><p>Centro de Acopio</p>
         <p>Nombre del Lugar</p>
         <p>Dirección</p>
-        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a>
+        <a href="">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a></div>
         `);
         marker4.setData(`
-        <p>Centro de Acopio</p>
+        <div class='modal'><p>Centro de Acopio</p>
         <p>Nombre del Lugar</p>
         <p>Dirección</p>
-        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a>
+        <a href="">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a></div>
         `);
         marker5.setData(`
-        <p>Centro de Acopio</p>
+        <div class='modal'><p>Centro de Acopio</p>
         <p>Nombre del Lugar</p>
         <p>Dirección</p>
-        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a>
+        <a href="">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a></div>
         `);
         marker6.setData(`
-        <p>Centro de Acopio</p>
+        <div class='modal'><p>Centro de Acopio</p>
         <p>Nombre del Lugar</p>
         <p>Dirección</p>
-        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
-        <a href="tel:+56000000000">+569123456789</a>
+        <a href="">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a></div>
         `);
         group.addEventListener('tap', event => {
             // tslint:disable-next-line:prefer-const

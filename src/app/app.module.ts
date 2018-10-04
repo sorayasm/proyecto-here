@@ -10,6 +10,10 @@ import { OrgFormComponent } from './componentes/org-form/org-form.component';
 import { MapComponent } from './componentes/map/map.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { SolicitanteComponent } from './componentes/solicitante/solicitante.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { MenuSolicitanteComponent } from './componentes/menu-solicitante/menu-solicitante.component';
+import { MenuVoluntarioComponent } from './componentes/menu-voluntario/menu-voluntario.component';
+import { MenuOrgComponent } from './componentes/menu-org/menu-org.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -63,7 +67,7 @@ import {
 
 // Servicios
 import { OrgService } from './servicios/org.service';
-import { RegistroComponent } from './componentes/registro/registro.component';
+
 
 // Rutas
 const appRoutes: Routes = [
@@ -88,8 +92,16 @@ const appRoutes: Routes = [
     component: VoluntarioFormComponent
   },
   {
-    path: 'navbar',
-    component: NavbarComponent,
+    path: 'menu-org',
+    component: MenuOrgComponent,
+  },
+  {
+    path: 'menu-solicitante',
+    component: MenuSolicitanteComponent,
+  },
+  {
+    path: 'menu-voluntario',
+    component: MenuVoluntarioComponent,
   },
   {
     path: 'solicitante',
@@ -111,7 +123,10 @@ export function getOrgServiceConfigs() { }
     LoginComponent,
     OrgFormComponent,
     RegistroComponent,
-    SolicitanteComponent
+    SolicitanteComponent,
+    MenuSolicitanteComponent,
+    MenuVoluntarioComponent,
+    MenuOrgComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,11 @@ import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-menu-org',
+  templateUrl: './menu-org.component.html',
+  styleUrls: ['./menu-org.component.css']
 })
-export class NavbarComponent implements OnDestroy {
+export class MenuOrgComponent implements OnDestroy {
   public query: string;
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;

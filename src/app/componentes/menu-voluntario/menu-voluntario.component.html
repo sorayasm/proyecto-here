@@ -9,8 +9,7 @@
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>
-          <p>{{item.email}}</p>
-          <br>
+          <app-vol-profile></app-vol-profile>
           <button id="cerrar" mat-button (click)="onLogout()">Cerrar Sesión</button>
         </mat-nav-list>
       </mat-sidenav>

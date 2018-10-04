@@ -42,7 +42,7 @@
     <br>
     <p>Indicanos hasta cuando estará disponible el Centro de ayuda de tu organización</p>
     <mat-form-field>
-      <input matInput [matDatepicker]='close' ormControlName="close" #close placeholder='Elige una fecha de cierre de Centro de Ayuda'>
+      <input matInput formControlName="close" #close placeholder='Elige una fecha de cierre de Centro de Ayuda'>
     </mat-form-field>
     <mat-form-field>
       <input matInput #nvol type='text' formControlName='nvol' placeholder='¿Cuantos voluntarios necesita?'>

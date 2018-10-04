@@ -67,6 +67,8 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 import { OrgProfileComponent } from './componentes/org-profile/org-profile.component';
+import { VolProfileComponent } from './componentes/vol-profile/vol-profile.component';
+import { SolProfileComponent } from './componentes/sol-profile/sol-profile.component';
 
 
 // Rutas
@@ -126,7 +128,9 @@ export function getOrgServiceConfigs() { }
     MenuSolicitanteComponent,
     MenuVoluntarioComponent,
     MenuOrgComponent,
-    OrgProfileComponent
+    OrgProfileComponent,
+    VolProfileComponent,
+    SolProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,13 @@
     <button type="button" (click)="onLogout()">Logout</button>
   </div> -->
   <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
+    <mat-form-field>
+      <mat-select #sel formControlName="sel" placeholder="Selecciona un tipo de ayuda">
+        <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
+          {{perfil.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <div class="input">
       <input type="email" formControlName="email">
     </div>
@@ -22,5 +29,6 @@
  Ejecutará onLogin
         </div> -->
   </form>
+  <mat-button-toggle id="logout-btn" value="underline" (click)="onLogout()" *ngIf="authService.user | async">Cerrar Sesión</mat-button-toggle>
 </section>
 

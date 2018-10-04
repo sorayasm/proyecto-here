@@ -23,8 +23,8 @@ export class MenuSolicitanteComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
   onLogout() {
     return this.authService.logout();
-   }
+  }
+  
 }

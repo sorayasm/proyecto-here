@@ -10,24 +10,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./menu-voluntario.component.css']
 })
 export class MenuVoluntarioComponent implements OnDestroy {
-  @Input() info;
-  @Input() id;
-  vol$: Observable<any>;
   public query: string;
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private database: AngularFireDatabase) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
     this.query = 'Hospital';
-    this.vol$ = this.database.list('/vol').snapshotChanges();
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
-
   }
 
 

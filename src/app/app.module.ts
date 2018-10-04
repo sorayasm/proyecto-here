@@ -13,6 +13,9 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuSolicitanteComponent } from './componentes/menu-solicitante/menu-solicitante.component';
 import { MenuVoluntarioComponent } from './componentes/menu-voluntario/menu-voluntario.component';
 import { MenuOrgComponent } from './componentes/menu-org/menu-org.component';
+import { OrgProfileComponent } from './componentes/org-profile/org-profile.component';
+import { VolProfileComponent } from './componentes/vol-profile/vol-profile.component';
+import { SolProfileComponent } from './componentes/sol-profile/sol-profile.component';
 
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
@@ -69,6 +72,7 @@ import {
 import { OrgService } from './servicios/org.service';
 import { VolService } from './servicios/vol.service';
 import { AuthService } from './servicios/auth.service';
+
 
 
 // Rutas
@@ -128,7 +132,9 @@ export function getOrgServiceConfigs() { }
     MenuSolicitanteComponent,
     MenuVoluntarioComponent,
     MenuOrgComponent,
-    OrgProfileComponent
+    OrgProfileComponent,
+    VolProfileComponent,
+    SolProfileComponent,
   ],
   imports: [
     BrowserModule,

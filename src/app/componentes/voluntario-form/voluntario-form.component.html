@@ -1,9 +1,11 @@
 <div class="mat-form-field">
   <form [formGroup]='volForm' (ngSubmit)='submit()'>
-    <h2>¡Muchas Gracias por querer colaborar!</h2>
-    <h5>En este formulario podrás inscribirte como voluntario en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
+    <h4><img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
+    ¡Muchas Gracias por querer colaborar!</h4>
+    <p>En este formulario podrás inscribirte como voluntario en caso de una catástrofe 
+      en nuestro país. Por favor completa los siguientes campos:</p>
     <br>
-    <h4>Datos Personales</h4>
+    <h6>Datos Personales</h6>
   <mat-form-field>
     <input matInput #name formControlName='name'  placeholder="Nombre">
   </mat-form-field>
@@ -16,7 +18,7 @@
   <mat-form-field>
     <input matInput placeholder="Edad" #age formControlName='age' >
   </mat-form-field>
-  <h4>Datos Ayuda</h4>
+  <h6>Datos Ayuda</h6>
   <mat-form-field>
     <input matInput placeholder="Telefono de contacto" #tel formControlName='tel' >
   </mat-form-field>
@@ -43,7 +45,13 @@
     <br>
     <mat-checkbox #check3 formControlName="check3">Convenio de Políticas de nuestra web.</mat-checkbox>
     <br>
-    <button mat-button type='submit' [disabled]='!volForm.valid'>¡Enviar registro!</button>
+    <div class="botones">
+      <button mat-button type='submit' [disabled]='!volForm.valid'>¡Enviar registro!</button>
+    </div>
+    <div class="botones">
+        <button mat-button routerLink='/login'>Ir a Login</button>
+      </div>
   </form>
-  <button mat-button routerLink='/login'>Ir a Login</button>
+  <a href="" routerLink='/registro'> <<--- Atras </a>
+ 
 </div>

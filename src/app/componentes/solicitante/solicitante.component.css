@@ -1,0 +1,22 @@
+
+.formulario {
+    /* background-color: coral; */
+    padding: 3em;
+    margin-left: 5em;
+    margin-top: 5em;
+}
+
+input {
+    width: 25em;
+	height: 5em;
+}
+
+button {
+	background-color: #EF6c00;
+    color: aliceblue;
+}
+
+.botones {
+    text-align: center;
+    padding: 1em;
+}

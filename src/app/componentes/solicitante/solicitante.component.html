@@ -1,8 +1,25 @@
-<form [formGroup]='authForm' (ngSubmit)='onRegister()'>
-  <p>Ingresa un correo: </p>
-  <input type='email' formControlName='email'><br> 
-  <p>Ingresa una contraseña: </p>
-  <input type='password' formControlName='password'><br>
-  <button mat-button type='submit'>Registrarse</button> <br>
-  <button mat-button routerLink='/login'>Ir a Login</button>
-  </form>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class=".col-sm-1">
+        <div class="formulario">
+          <form [formGroup]='authForm' (ngSubmit)='onRegister()'>
+            <h6>Por favor ingresa tus datos...</h6>
+            <p>Ingresa un correo: </p>
+            <input type='email' formControlName='email'><br> 
+            <p>Ingresa una contraseña: </p>
+            <input type='password' formControlName='password'>
+            <div class="botones">
+              <button mat-button type='submit'>Registrarse</button>
+            </div>
+            <div class="botones">
+              <button mat-button routerLink='/login'>Ir a Login</button>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

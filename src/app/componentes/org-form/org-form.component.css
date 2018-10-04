@@ -4,3 +4,38 @@
     margin-bottom: .5em;
     padding: .5em;
 }
+
+img {
+    width: 1em;
+    height: 1.5em;
+  }
+  
+  h4, h6 {
+    color: #EF6c00;
+  }
+  
+  p {
+  
+  font-size: 12px;
+  }
+  
+  button {
+  
+    background-color: #EF6c00;
+    color: aliceblue;
+    text-align: center;
+  
+  
+  }
+  
+  .botones {
+    
+    padding: 2em;
+    text-align: center;
+  }
+
+  a {
+
+    color: #EF6c00;
+    font-size: 2em;
+  }

@@ -17,6 +17,7 @@ import { OrgProfileComponent } from './componentes/org-profile/org-profile.compo
 import { VolProfileComponent } from './componentes/vol-profile/vol-profile.component';
 import { SolProfileComponent } from './componentes/sol-profile/sol-profile.component';
 
+
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
@@ -78,38 +79,57 @@ const appRoutes: Routes = [
    path: '',
    component: HomeComponent
   },
+
   {
     path: 'login',
     component: LoginComponent
   },
+
   {
     path: 'registro',
     component: RegistroComponent
   },
+
   {
     path: 'org-form',
     component: OrgFormComponent
   },
+
   {
     path: 'voluntario-form',
     component: VoluntarioFormComponent
   },
+
+  {
+    path: 'solicitante',
+    component: SolicitanteComponent
+  },
+
+  // {
+  //   path: 'navbar',
+  //   component: NavbarComponent
+  // },
+
   {
     path: 'menu-org',
-    component: MenuOrgComponent,
+    component: MenuOrgComponent
   },
+
   {
     path: 'menu-solicitante',
-    component: MenuSolicitanteComponent,
+    component: MenuSolicitanteComponent
   },
+
   {
     path: 'menu-voluntario',
     component: MenuVoluntarioComponent,
   },
+
   {
-    path: 'solicitante',
-    component: SolicitanteComponent,
-  }
+    path: 'home',
+    component: HomeComponent,
+  },
+ 
 ];
 
 // Services

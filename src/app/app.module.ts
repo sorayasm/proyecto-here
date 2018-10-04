@@ -64,6 +64,7 @@ import {
 
 // Servicios
 import { OrgService } from './servicios/org.service';
+import { AuthService } from './servicios/auth.service';
 
 
 // Rutas
@@ -167,7 +168,7 @@ export function getOrgServiceConfigs() { }
   ],
   providers: [
     OrgService,
-    HomeComponent
+    AuthService
   ],
 
   bootstrap: [AppComponent]

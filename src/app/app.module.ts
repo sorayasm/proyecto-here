@@ -72,8 +72,6 @@ import { OrgService } from './servicios/org.service';
 import { VolService } from './servicios/vol.service';
 import { AuthService } from './servicios/auth.service';
 
-
-
 // Rutas
 const appRoutes: Routes = [
   {
@@ -113,7 +111,6 @@ const appRoutes: Routes = [
     component: SolicitanteComponent,
   }
 ];
-
 
 // Services
 export function getOrgServiceConfigs() { }

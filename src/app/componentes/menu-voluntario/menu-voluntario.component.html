@@ -1,13 +1,12 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="example-toolbar">
+    <mat-toolbar color="warn" class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <h1 class="example-app-name">Movilizapp</h1>
+      <h1 class="example-app-name">MovilizApp</h1>
     </mat-toolbar>
-  
     <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+                           [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+                   [fixedInViewport]="mobileQuery.matches">
         <mat-nav-list>
           <app-vol-profile></app-vol-profile>
           <button id="cerrar" mat-button (click)="onLogout()">Cerrar Sesión</button>
@@ -21,9 +20,9 @@
           lat="-33.4372" 
           lng="-70.6506" 
           width="98vw" 
-          height="85vh">
+          height="80vh">
           </app-map>
-          <div style="padding: 10px 0" >
+          <div class="btn-search">
               <input type="text" placeholder="Buscar lugares..." [(ngModel)]="query" />
               <button (click)="map.places(query)">Buscar</button>
             </div>

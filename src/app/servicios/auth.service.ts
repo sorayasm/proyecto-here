@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireList } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +11,24 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   user: Observable<firebase.User>;
+  public userList$: AngularFireList<any>;
 
-  constructor( public firebaseAuth: AngularFireAuth, public router: Router ) {
+  constructor( public firebaseAuth: AngularFireAuth, public database: AngularFireDatabase, public router: Router ) {
     this.user = firebaseAuth.authState;
+    this.userList$ = this.database.list('/users');
   }
 
   signup(email: string, password: string) {
-    return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
+    return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+    .then(user => {
+      console.log('Success!', user);
+      const newUser = {
+        email: email,
+        uid: user.user.uid,
+        username: email,
+      };
+      this.userList$.push(newUser);
+    });
   }
 
   login(email: string, password: string) {

@@ -43,7 +43,7 @@ export class SolicitanteComponent implements OnInit {
  this.authService.signup(this.authForm.value.email, this.authForm.value.password)
  .then(() => {
    // Registro exitoso. Ingresemos los datos a la base de Datos y redireccionamos al login
-   this.router.navigate(['/navbar']);
+   this.router.navigate(['/menu-solicitante']);
  })
  .catch(() => {
    // Algo salió mal, avisemos mejor para que reintente
@@ -61,10 +61,11 @@ export class SolicitanteComponent implements OnInit {
     password: this.authForm.value.password,
   };
   this.authList$.push(newAuth);
-  console.log('agregado nuevo voluntario ');
+  console.log('agregado nuevo voluntario');
 }
+
 submit() {
-  this.addAuth();
+ // this.addAuth();
   this.onRegister();
   }
 

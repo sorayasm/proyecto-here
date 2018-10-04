@@ -9,12 +9,11 @@
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list>
-          <a href="">lalal</a>
+          <p>{{item.email}}</p>
           <br>
           <button id="cerrar" mat-button (click)="onLogout()">Cerrar Sesión</button>
         </mat-nav-list>
       </mat-sidenav>
-  
       <mat-sidenav-content>
           <app-map #map
           class="map"

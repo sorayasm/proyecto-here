@@ -8,7 +8,7 @@
   </div> -->
   <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
     <mat-form-field>
-      <mat-select #sel formControlName="sel" placeholder="Selecciona un tipo de ayuda">
+      <mat-select #sel formControlName="sel" placeholder="Elige tu perfil">
         <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
           {{perfil.viewValue}}
         </mat-option>

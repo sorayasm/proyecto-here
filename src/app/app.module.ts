@@ -13,6 +13,9 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { MenuSolicitanteComponent } from './componentes/menu-solicitante/menu-solicitante.component';
 import { MenuVoluntarioComponent } from './componentes/menu-voluntario/menu-voluntario.component';
 import { MenuOrgComponent } from './componentes/menu-org/menu-org.component';
+import { OrgProfileComponent } from './componentes/org-profile/org-profile.component';
+import { VolProfileComponent } from './componentes/vol-profile/vol-profile.component';
+import { SolProfileComponent } from './componentes/sol-profile/sol-profile.component';
 
 
 // funcionalidades y estilos
@@ -24,6 +27,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrgProfileComponent } from './componentes/org-profile/org-profile.component';
 
 // Angular Material
 import {
@@ -67,9 +71,9 @@ import {
 
 // Servicios
 import { OrgService } from './servicios/org.service';
-import { OrgProfileComponent } from './componentes/org-profile/org-profile.component';
-import { VolProfileComponent } from './componentes/vol-profile/vol-profile.component';
-import { SolProfileComponent } from './componentes/sol-profile/sol-profile.component';
+import { VolService } from './servicios/vol.service';
+import { AuthService } from './servicios/auth.service';
+
 
 
 // Rutas
@@ -205,7 +209,8 @@ export function getOrgServiceConfigs() { }
   ],
   providers: [
     OrgService,
-    HomeComponent
+    VolService,
+    AuthService
   ],
 
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, OnDestroy} from '@angular/core'; import { AuthService } from '../../servicios/auth.service';
-
+import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import { AuthService } from '../../servicios/auth.service';
 
 @Component({
   selector: 'app-menu-solicitante',
@@ -26,5 +26,5 @@ export class MenuSolicitanteComponent implements OnDestroy {
   onLogout() {
     return this.authService.logout();
   }
-
+  
 }

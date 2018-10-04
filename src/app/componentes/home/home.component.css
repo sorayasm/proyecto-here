@@ -1,18 +1,26 @@
+
+
 .contenedor {
- background-color: #E5E5E5;
- width: 25em;
- height: 30em;
- margin: 5%;
- padding: 2.5em;
- text-align: center;
+	/* background-color: rgba(251, 251, 0, 0.637); */
+	padding: 4em;
+}
+
+img {
+
+	height: 100px;
+	width: 300px;
+    
 }
 
 .formulario {
-    padding: 3em;
+	/* background-color: blueviolet; */
+	margin-right: 3em;
+	margin-top: 10em;
 }
 
-/* img {
-    height: 10em;
-    width: 20em;
-    padding: 2em;
-} */
+button {
+	background-color: #EF6c00;
+	color: aliceblue;
+}
+
+

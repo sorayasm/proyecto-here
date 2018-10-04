@@ -119,7 +119,7 @@ export function getOrgServiceConfigs() { }
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase, 'proyecto-here'),
+    AngularFireModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
@@ -170,7 +170,8 @@ export function getOrgServiceConfigs() { }
   providers: [
     OrgService,
     AuthService,
-    VolService
+    VolService,
+    { provide: FirebaseOptionsToken, useValue: environment.firebase }
   ],
 
   bootstrap: [AppComponent]

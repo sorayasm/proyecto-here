@@ -104,10 +104,10 @@ const appRoutes: Routes = [
     component: SolicitanteComponent
   },
 
-  {
-    path: 'navbar',
-    component: NavbarComponent
-  },
+  // {
+  //   path: 'navbar',
+  //   component: NavbarComponent
+  // },
 
   {
     path: 'menu-org',
@@ -122,6 +122,11 @@ const appRoutes: Routes = [
   {
     path: 'menu-voluntario',
     component: MenuVoluntarioComponent,
+  },
+
+  {
+    path: 'home',
+    component: HomeComponent,
   },
  
 ];

@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./sol-profile.component.css']
 })
 export class SolProfileComponent implements OnInit {
-  public auth$: Observable<any>;
+  public users$: Observable<any>;
   constructor(public database: AngularFireDatabase) {
-  this.auth$ = this.database.list('/auth').valueChanges();
+  this.users$ = this.database.list('/users').valueChanges();
    }
 
   ngOnInit() {

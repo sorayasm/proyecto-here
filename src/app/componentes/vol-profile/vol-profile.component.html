@@ -1,12 +1,11 @@
 <div *ngFor="let vol of vol$ | async" class="wall">
     <mat-card class="card">
         <mat-card-content>
-            <p>{{vol.name}} {{vol.lastname}}<p>
-        </mat-card-content>
-      </mat-card>
-    <mat-card class="card">
-      <mat-card-content>
-          <p>{{vol.email}}<p>
+            <p>¡Hola Voluntari@!</p>
+            <p>Gracias por unirte a MovilizApp</p>
+            <p>Tus datos son:</p>
+            <p>Nombre: {{vol.name}} {{vol.lastname}}<p>
+            <p>correo: {{vol.email}}<p>
       </mat-card-content>
     </mat-card>
 

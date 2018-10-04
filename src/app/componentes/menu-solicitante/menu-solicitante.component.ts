@@ -26,5 +26,4 @@ export class MenuSolicitanteComponent implements OnDestroy {
   onLogout() {
     return this.authService.logout();
   }
-  
 }

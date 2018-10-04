@@ -1,29 +1,27 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class=".col-sm-12">
-        <div class="contenedor">
-            <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
-              <mat-form-field>
-                <mat-select #sel formControlName="sel" placeholder="Elige tu perfil">
-                  <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
-                    {{perfil.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <div class="input">
-                <input type="email" formControlName="email">
-              </div>
-              <div class="input">
-                  <input type="password" formControlName="password">
-              </div>
-              <div class="botones">
-                  <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
-              </div>
-        </div>
+
+<div class="contenedor">
+  <img src="../../../assets/imagenes/isotipomovilizappconsombra.png" alt="">
+    <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
+        <mat-form-field>
+          <mat-select #sel formControlName="sel" placeholder="Elige tu perfil">
+            <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
+              {{perfil.viewValue}}
+            </mat-option>
+            </mat-select>
+          </mat-form-field>
+      <div class="input">
+        <input type="email" formControlName="email">
       </div>
-    </div>   
-  </div> 
-</section>
+      <div class="input">
+          <input type="password" formControlName="password">
+      </div>
+      <div class="botones">
+          <button type="button" (click)="onLogin()" 
+          [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
+      </div>
+      <div>
+          <a href="" routerLink='/home'> <<--- Atras </a>
+      </div>
+
 
 

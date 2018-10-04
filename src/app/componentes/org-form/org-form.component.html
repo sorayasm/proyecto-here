@@ -1,23 +1,24 @@
 <div class='container'>
   <form [formGroup]='orgForm' (ngSubmit)='submit()'>
-    <h2>¡Muchas Gracias por querer colaborar!</h2>
+    <h4><img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
+      ¡Muchas Gracias por querer colaborar!</h4>
     <h5>En este formulario podrás inscribirte como organización colaboradora en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
     <br>
-    <h4>Datos de la cuenta</h4>
+    <h6>Datos de la cuenta</h6>
     <mat-form-field>
       <input matInput #email type='email' formControlName='email' placeholder='Correo de la organización'>
     </mat-form-field>
     <mat-form-field>
       <input matInput #pass type='password' formControlName='password' placeholder='Contraseña'>
     </mat-form-field>
-    <h4>Datos de contacto</h4>
+    <h6>Datos de contacto</h6>
     <mat-form-field>
       <input matInput #contactname type='text' formControlName='contactname' placeholder='Nombre de la persona de contacto'>
     </mat-form-field>
     <mat-form-field>
       <input matInput #contactrut type='text' formControlName='contactrut' placeholder='RUT de la persona de contacto'>
     </mat-form-field>
-  <h4>Datos de la organización</h4>
+  <h6>Datos de la organización</h6>
     <mat-form-field>
       <input matInput #orgname type='text' formControlName='orgname' placeholder='Nombre de la organización'>
     </mat-form-field>
@@ -60,5 +61,8 @@
     <br>
     <button mat-button type='submit' [disabled]='!orgForm.valid'>¡Enviar registro!</button>
   </form>
+  <div>
+    <a href="" routerLink='/registro'> <<--- Atras </a>
+  </div>
 </div>
 

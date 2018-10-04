@@ -1,16 +1,15 @@
-
 img {
 
 	width: 12em;
 	height: 15em;
-	margin: 7em;
-	margin-left: 12em;
-
+	margin-left: 15em;
+	margin-top: 7em;
 }
 
 .formulario {
   /* background-color: blueviolet; */
   margin-left: 5em;
+  margin-top: 2em;
   text-align: center;
   padding: 1em;
 
@@ -38,4 +37,10 @@ input {
 .input {
 
 	padding: 1em;
+}
+
+a {
+
+	color: #EF6c00;
+	font-size: 2em;
 }

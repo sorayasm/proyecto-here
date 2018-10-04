@@ -15,7 +15,7 @@ import { SolicitanteComponent } from './componentes/solicitante/solicitante.comp
 // funcionalidades y estilos
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule } from '@angular/forms';

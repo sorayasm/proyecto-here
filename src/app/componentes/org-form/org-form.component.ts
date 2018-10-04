@@ -106,7 +106,7 @@ selectedNames$;
   submit() {
   this.onRegister();
   this.addOrg();
-  this.router.navigate(['/login']);
+  this.router.navigate(['/menu-org']);
   }
 
   ngOnInit() {

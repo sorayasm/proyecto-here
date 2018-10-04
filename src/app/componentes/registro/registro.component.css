@@ -1,12 +1,20 @@
-.contenedor {
-    background-color: #E5E5E5;
-    width: 25em;
-    height: 30em;
-    margin: 5%;
-    padding: 4em;
-    text-align: center;
-   }
 
-   h6 {
-       padding: 2em;
-   }
+img {
+
+	height: 90px;
+    width: 300px;
+    margin-top: 7em;
+    margin-left: 5em;
+    
+}
+
+.registro {
+	/* background-color: blueviolet; */
+	margin-left: 2em;
+	margin-top: 8em;
+}
+
+button {
+	background-color: #EF6c00;
+	color: aliceblue;
+}

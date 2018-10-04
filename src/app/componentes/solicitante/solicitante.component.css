@@ -1,6 +1,23 @@
-.mat-form-field{
-  width: 90%;
-  margin-top: .5em;
-  margin-bottom: .5em;
-  padding: .5em;
+
+
+.formulario {
+    /* background-color: coral; */
+    padding: 3em;
+    margin-left: 5em;
+    margin-top: 5em;
+}
+
+input {
+    width: 25em;
+	height: 5em;
+}
+
+button {
+	background-color: #EF6c00;
+    color: aliceblue;
+}
+
+.botones {
+    text-align: center;
+    padding: 1em;
 }

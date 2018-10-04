@@ -1,0 +1,13 @@
+<div *ngFor="let vol of vol$ | async" class="wall">
+    <mat-card class="card">
+        <mat-card-content>
+            <p>{{vol.name}} {{vol.lastname}}<p>
+        </mat-card-content>
+      </mat-card>
+    <mat-card class="card">
+      <mat-card-content>
+          <p>{{vol.email}}<p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>

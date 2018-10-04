@@ -40,17 +40,9 @@
     <mat-checkbox class="margin" #checkEntrega formControlName="checkEntrega">Entrega de Alimentos</mat-checkbox><br>
     <mat-checkbox class="margin" #checkPrimeros formControlName="checkPrimeros">Primeros Auxilios</mat-checkbox><br>
     <br>
-    <p>Indicanos cuánto tiempo estará disponible el Centro de ayuda de tu organización</p>
+    <p>Indicanos hasta cuando estará disponible el Centro de ayuda de tu organización</p>
     <mat-form-field>
-      <input matInput formControlName="open" [matDatepicker]='open' placeholder='Elige una fecha de apertura de Centro de Ayuda'>
-      <mat-datepicker-toggle matSuffix [for]='open'></mat-datepicker-toggle>
-      <mat-datepicker #open></mat-datepicker>
-    </mat-form-field> 
-    <br>
-    <mat-form-field>
-      <input matInput formControlName="close" [matDatepicker]='close' placeholder='Elige una fecha de cierre de Centro de Ayuda'>
-      <mat-datepicker-toggle matSuffix [for]='close'></mat-datepicker-toggle>
-      <mat-datepicker #close></mat-datepicker>
+      <input matInput formControlName="close" #close placeholder='Elige una fecha de cierre de Centro de Ayuda'>
     </mat-form-field>
     <mat-form-field>
       <input matInput #nvol type='text' formControlName='nvol' placeholder='¿Cuantos voluntarios necesita?'>

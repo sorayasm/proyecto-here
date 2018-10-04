@@ -50,7 +50,6 @@ selectedNames$;
       checkTransporte: [''],
       checkEntrega: [''],
       checkPrimeros: [''],
-      open: [''],
       close: [''],
       nvol: [''],
       orgother: [''],
@@ -83,7 +82,6 @@ selectedNames$;
   addOrg() {
     const newOrg = {
       email: this.orgForm.value.email,
-      uid: this.firebaseAuth.auth.currentUser.uid,
       contactname: this.orgForm.value.contactname,
       contactrut: this.orgForm.value.contactrut,
       orgname: this.orgForm.value.orgname,
@@ -95,7 +93,6 @@ selectedNames$;
       checkTransporte: this.orgForm.value.checkTransporte,
       checkCEntrega: this.orgForm.value.checkEntrega,
       checkPrimeros: this.orgForm.value.checkPrimeros,
-      open: this.orgForm.value.open,
       close: this.orgForm.value.close,
       nvol: this.orgForm.value.nvol,
       check1: this.orgForm.value.check1,
@@ -109,7 +106,7 @@ selectedNames$;
   submit() {
   this.onRegister();
   this.addOrg();
-  this.router.navigate(['/wall']);
+  this.router.navigate(['/login']);
   }
 
   ngOnInit() {

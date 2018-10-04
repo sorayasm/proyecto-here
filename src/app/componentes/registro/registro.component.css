@@ -1,12 +1,27 @@
+.fondoPantalla {
+    /* background-image: url('https://s03.s3c.es/imag/_v0/635x300/3/e/e/Felicidad-ayuda-personas-635-iStock.jpg'); */
+    background-image: url('http://agiles2015.agiles.org/es/wp-content/uploads/2015/09/Voluntarios-NSJ-2014-1024x447.jpg');
+    
+}
+
 .contenedor {
-    background-color: #E5E5E5;
-    width: 25em;
-    height: 30em;
-    margin: 5%;
+    background-color: rgba(229, 229, 229, 0.685);
+    width: 35em;
+    height: 55em;
+    margin-left: 35%;
+    margin-top: 5%;
     padding: 4em;
     text-align: center;
+    border-radius: 6%;
    }
 
    h6 {
-       padding: 2em;
+       padding: 1em;
+       color: orange;
+       font-family: fantasy;
+       font-size: 3em;
+   }
+
+   .registro {
+       padding: 1em;
    }

@@ -89,6 +89,10 @@ const appRoutes: Routes = [
     component: VoluntarioFormComponent
   },
   {
+    path: 'solicitante',
+    component: SolicitanteComponent
+  },
+  {
     path: 'navbar',
     component: NavbarComponent,
   }
@@ -108,7 +112,8 @@ export function getOrgServiceConfigs() { }
     NavbarComponent,
     LoginComponent,
     OrgFormComponent,
-    RegistroComponent
+    RegistroComponent,
+    SolicitanteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,30 +1,26 @@
-<p>
-  Hola soy el LOGIN!
-</p>
-
 <section class="contenedor">
-    <div class="titulo">
-        <h4>Login</h4>
-    </div>
-  <!-- <div *ngIf="authService.user | async">
-    <p>Bienvenido : {{((authService.user | async) || {}).email}}</p>
+  <div class="titulo">
+      <h4>Login</h4>
+  </div>
+  <div *ngIf="authService.user | async">
+    <p> Bienvenido : {{((authService.user | async) || {}).email}}</p>
     <button type="button" (click)="onLogout()">Logout</button>
-  </div> -->
-  <form [formGroup]="authForm" (ngSubmit)="onRegister()" *ngIf="!(authService.user | async)" class = "formulario">
-    <div class="input">
-      <input type="email" formControlName="email">
-    </div>
-    <div class="input">
+  </div>
+    <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
+      <div class="input">
+        <input type="email" formControlName="email">
+      </div>
+      <div class="input">
         <input type="password" formControlName="password">
-    </div>
-    <div class="botones">
+      </div>
+      <div class="botones">
         <button type="submit" [disabled]="!authForm.valid" class="btn btn-success">Registrarse</button>
-    </div>
-        <div class="botones">
- <!--Ejecutará ngSubmit -> onRegister puesto en la etiqueta form-->
-        <button routerLInk = '/login' type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
- <!--Ejecutará onLogin-->
-        </div>
-  </form>
+      </div>
+      <div class="botones">
+      <!--Ejecutará ngSubmit -> onRegister puesto en la etiqueta form-->
+      <button type="button" routerLink = '/registro' [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
+      <!--Ejecutará onLogin-->
+      </div>
+    </form>
 </section>
 

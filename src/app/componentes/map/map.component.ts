@@ -14,6 +14,7 @@ export class MapComponent implements OnInit {
     public map: any;
     private ui: any;
     private search: any;
+    public currentPosition: any;
 
     @ViewChild('map')
     public mapElement: ElementRef;
@@ -44,17 +45,26 @@ export class MapComponent implements OnInit {
             'app_code': this.appCode
         });
         this.search = new H.places.Search(this.platform.getPlacesService());
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((showPosition) => {
+              this.lat = showPosition.coords.latitude;
+              this.lng = showPosition.coords.longitude;
+              this.mapLocation();
+            });
+        } else {
+        alert('La geolocalización no funciona en este navegador.');
+    }
     }
 
     // tslint:disable-next-line:use-life-cycle-interface
-    public ngAfterViewInit() {
+    public mapLocation() {
        // tslint:disable-next-line:prefer-const
         let defaultLayers = this.platform.createDefaultLayers();
         this.map = new H.Map(
             this.mapElement.nativeElement,
             defaultLayers.normal.map,
             {
-                zoom: 12,
+                zoom: 15,
                 center: { lat: this.lat, lng: this.lng }
             }
         );
@@ -103,34 +113,3 @@ export class MapComponent implements OnInit {
 
     }
 }
-
-/*
-// funcion para la localizacion HTML5
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Estas aquí.');
-        infoWindow.open(map);
-        map.setCenter(pos);
-    }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-    });
-} else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-}
-
-// funcion para la localizacion del usuario
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: La geolocalización falló.' :
-        'Error: Tu navegador no soporta la geolocalización.');
-    infoWindow.open(map);
-} */
-

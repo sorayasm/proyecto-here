@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   authForm: FormGroup;
 
   // Solicitamos en el constructor todas las cosas necesarias
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
+  constructor(private formBuilder: FormBuilder, public authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
     this.createAuthForm();
   }
 

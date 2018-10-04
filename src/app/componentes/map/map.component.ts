@@ -112,12 +112,48 @@ export class MapComponent implements OnInit {
         group = new H.map.Group();
         group.addObjects([marker1, marker2, marker3, marker4, marker5, marker6]);
         this.map.addObject(group);
-        marker1.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
-        marker2.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
-        marker3.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
-        marker4.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
-        marker5.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
-        marker6.setData(`<p>Centro de Acopio</p><p>Nombre del Lugar</p><p>Dirección</p><a href="">Ir a ayudar</a>`);
+        marker1.setData(`
+        <p>Centro de Acopio</p>
+        <p>Nombre del Lugar</p>
+        <p>Dirección</p>
+        <a href="">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
+        `);
+        marker2.setData(`
+        <p>Centro de Acopio</p>
+        <p>Nombre del Lugar</p>
+        <p>Dirección</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
+        `);
+        marker3.setData(`
+        <p>Centro de Acopio</p>
+        <p>Nombre del Lugar</p>
+        <p>Dirección</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
+        `);
+        marker4.setData(`
+        <p>Centro de Acopio</p>
+        <p>Nombre del Lugar</p>
+        <p>Dirección</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
+        `);
+        marker5.setData(`
+        <p>Centro de Acopio</p>
+        <p>Nombre del Lugar</p>
+        <p>Dirección</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
+        `);
+        marker6.setData(`
+        <p>Centro de Acopio</p>
+        <p>Nombre del Lugar</p>
+        <p>Dirección</p>
+        <a href="mailto:correo@correo.cl">correo@correo.cl</a>
+        <a href="tel:+56000000000">+569123456789</a>
+        `);
         group.addEventListener('tap', event => {
             // tslint:disable-next-line:prefer-const
                 let bubble =  new H.ui.InfoBubble(event.target.getPosition(), {

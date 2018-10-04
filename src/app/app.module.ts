@@ -65,6 +65,7 @@ import {
 // Servicios
 import { OrgService } from './servicios/org.service';
 import { AuthService } from './servicios/auth.service';
+import { VolService } from './servicios/vol.service';
 
 
 // Rutas
@@ -168,7 +169,8 @@ export function getOrgServiceConfigs() { }
   ],
   providers: [
     OrgService,
-    AuthService
+    AuthService,
+    VolService
   ],
 
   bootstrap: [AppComponent]

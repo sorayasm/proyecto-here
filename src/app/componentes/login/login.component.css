@@ -1,26 +1,41 @@
-.contenedor {
-    background-color:  #E5E5E5;
-    height: 30em;
-    width: 25em;
-    padding: 3em;
-    margin: 3%;
-}
 
-.titulo {
-    text-align: center;
-    padding: 1em;
+img {
+
+	width: 12em;
+	height: 15em;
+	margin: 7em;
+	margin-left: 12em;
+
 }
 
 .formulario {
-    padding: 2.5em;
-    text-align: center;
+  /* background-color: blueviolet; */
+  margin-left: 5em;
+  text-align: center;
+  padding: 1em;
+
+
 }
 
+
+button {
+	background-color: #EF6c00;
+	color: aliceblue;
+}
+
+
 .botones {
-    padding: 0.5em;
-    text-align: center;
+	padding: 1em;
+}
+
+
+input {
+
+	width: 25em;
+	height: 5em;
 }
 
 .input {
-    padding: 0.5em;
+
+	padding: 1em;
 }

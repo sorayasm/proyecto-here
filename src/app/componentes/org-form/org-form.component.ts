@@ -109,7 +109,7 @@ selectedNames$;
   submit() {
   this.onRegister();
   this.addOrg();
-  this.router.navigate(['/wall']);
+  this.router.navigate(['/menu-org']);
   }
 
   ngOnInit() {

@@ -14,7 +14,6 @@ export interface OrgProfile {
   contactrut: string;
   orgname: string;
   orgrut: string;
-  orgmail: string;
   orgphone: string;
   orgdir: string;
   open: string;

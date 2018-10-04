@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, OnDestroy} from '@angular/core';
-
-
 
 @Component({
   selector: 'app-navbar',
@@ -25,4 +22,5 @@ export class NavbarComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
+
 }

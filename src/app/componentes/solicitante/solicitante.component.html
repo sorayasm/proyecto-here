@@ -5,6 +5,7 @@
       <div class=".col-sm-1">
         <div class="formulario">
           <form [formGroup]='authForm' (ngSubmit)='onRegister()'>
+              <img src="../../../assets/imagenes/isotipomovilizappconsombra.png" alt="">
             <h6>Por favor ingresa tus datos...</h6>
             <p>Ingresa un correo: </p>
             <input type='email' formControlName='email'><br> 
@@ -16,6 +17,9 @@
             <div class="botones">
               <button mat-button routerLink='/login'>Ir a Login</button>
               </div>
+              <div>
+                  <a href="" routerLink='/registro'> <<--- Atras </a>
+                </div>
             </form>
         </div>
       </div>

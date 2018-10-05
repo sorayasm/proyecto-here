@@ -5,6 +5,11 @@ import { AuthService } from '../../servicios/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router} from '@angular/router';
 
+export interface Perfil {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,6 +19,7 @@ import { Router} from '@angular/router';
 
 export class LoginComponent implements OnInit {
   authForm: FormGroup;
+
 
   perfiles: Perfil[] = [
     {value: 'orgs', viewValue: 'Organización'},
@@ -41,12 +47,11 @@ export class LoginComponent implements OnInit {
    * MatSnackBarModule
    */
 
-
   onLogin() {
     this.authService.login(this.authForm.value.email, this.authForm.value.password)
       .then(() => {
         // Login exitoso, así que celebramos con el usuario (?)
-        this.router.navigate(['/navbar']);
+        this.loginRouting();
       })
       .catch(() => {
         // Algo salió mal, avisemos mejor para que reintente
@@ -73,9 +78,19 @@ export class LoginComponent implements OnInit {
           });
       });
   }
+
+  public loginRouting() {
+    this.authForm.get('sel').valueChanges.subscribe(value => {
+      console.log(value);
+      if (value === 'orgs') {
+      this.router.navigate(['/menu-org']);
+    } else if (value === 'vol') {
+      this.router.navigate(['/menu-voluntario']);
+    } else {
+      this.router.navigate(['/menu-solicitante']);
+    }
+     });
+  }
+
 }
 
-export interface Perfil {
-  value: string;
-  viewValue: string;
-}

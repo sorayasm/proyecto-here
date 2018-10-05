@@ -1,15 +1,13 @@
 .contenedor {
 	/* background-color: rgba(251, 251, 0, 0.637); */
-	padding: 4em;
+	padding-top: 4em;
 }
 
 img {
-
 	height: 90px;
 	width: 300px;
 	margin-left: 2em;
 	margin-top: 5em;
-    
 }
 
 .formulario {

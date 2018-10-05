@@ -1,7 +1,7 @@
 
 <section class="contenedor">
-    <div class="titulo">
-        <h4>Login</h4>
+    <div>
+      <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
     </div>
   <!-- <div *ngIf="authService.user | async">
     <p>Bienvenido : {{((authService.user | async) || {}).email}}</p>
@@ -16,13 +16,15 @@
       </mat-select>
     </mat-form-field>
     <div class="input">
+      <p>Ingresa tu correo:</p>
       <input type="email" formControlName="email">
     </div>
     <div class="input">
+      <p>Ingresa tu contraseña:</p>
         <input type="password" formControlName="password">
     </div>
     <div class="botones">
-        <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
+        <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn">Log - in</button>
     </div>
  <!--       <div class="botones">
  Ejecutará ngSubmit -> onRegister puesto en la etiqueta form. Cambié esto porque daba error

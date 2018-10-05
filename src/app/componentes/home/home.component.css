@@ -1,24 +1,18 @@
 .contenedor {
-	/* background-color: rgba(251, 251, 0, 0.637); */
-	padding-top: 4em;
+	width: 100vw;
+	text-align: center;
 }
 
 img {
-	height: 90px;
 	width: 300px;
-	margin-left: 2em;
-	margin-top: 5em;
-}
-
-.formulario {
-	/* background-color: blueviolet; */
-	margin-right: 3em;
-	margin-top: 8em;
+	margin: 100px auto 50px auto;
 }
 
 button {
 	background-color: #EF6c00;
 	color: aliceblue;
+	width: 300px;
+	margin: 0px auto;
 }
 
 

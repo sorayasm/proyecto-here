@@ -1,12 +1,6 @@
-
-img {
-
-	height: 90px;
-    width: 300px;
-    margin-top: 7em;
-	margin-left: auto;
-	margin-right: auto;
-    
+.contenedor {
+	width: 100vw;
+	text-align: center;
 }
 
 .registro {
@@ -16,9 +10,19 @@ img {
 	margin-top: 8em;
 }
 
+img {
+	height: 90px;
+    width: 300px;
+    margin-top: 7em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 button {
 	background-color: #EF6c00;
 	color: aliceblue;
+	width: 300px;
+	margin: 0px auto;
 }
 
 a {

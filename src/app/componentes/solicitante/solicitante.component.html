@@ -1,30 +1,21 @@
-
-
-<section>
-  <div class="container">
-    <div class="row">
-      <div class=".col-sm-1">
-        <div class="formulario">
-          <form [formGroup]='authForm' (ngSubmit)='onRegister()'>
-              <img src="../../../assets/imagenes/isotipomovilizappconsombra.png" alt="">
-            <h6>Por favor ingresa tus datos...</h6>
-            <p>Ingresa un correo: </p>
-            <input type='email' formControlName='email'><br> 
-            <p>Ingresa una contraseña: </p>
-            <input type='password' formControlName='password'>
-            <div class="botones">
-              <button mat-button type='submit'>Registrarse</button>
-            </div>
-            <div class="botones">
-              <button mat-button routerLink='/login'>Ir a Login</button>
-              </div>
-              <div>
-                  <a href="" routerLink='/registro'> <<--- Atras </a>
-                </div>
-            </form>
-        </div>
-      </div>
+<div class="formulario">
+  <form [formGroup]='authForm' (ngSubmit)='onRegister()'>
+      <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
+    <h6>Por favor ingresa tus datos...</h6>
+    <p>Ingresa un correo: </p>
+    <input type='email' formControlName='email'><br> 
+    <p>Ingresa una contraseña: </p>
+    <input type='password' formControlName='password'>
+    <div class="botones">
+      <button mat-button type='submit'>Registrarse</button>
     </div>
-  </div>
-</section>
+    <div class="botones">
+      <button mat-button routerLink='/login'>Ir a Login</button>
+      </div>
+      <div>
+          <a href="" routerLink='/registro'> < atrás </a>
+        </div>
+    </form>
+</div>
+
 

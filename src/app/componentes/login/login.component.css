@@ -1,37 +1,27 @@
 img {
-	width: 12em;
-	height: 15em;
-	margin-left: 15em;
-	margin-top: 7em;
+	width: 8em;
 }
-
 
 .formulario {
   /* background-color: blueviolet; */
-  margin-left: 5em;
   margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   padding: 1em;
-
-
 }
 
 button {
 	background-color: #EF6c00;
 	color: aliceblue;
+	margin: 5px auto;
 }
-
-
-.botones {
-	padding: 1em;
-}
-
 
 .input {
 	padding: 1em;
-	margin: 1em;
-	width: 25em;
-	height: 5em;
+	margin: .1em;
+	width: 30em;
+	height: 8em;
 }
 
 a {

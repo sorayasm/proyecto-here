@@ -1,20 +1,18 @@
 
-<section class="contenedor">
-    <div>
+<section class="formulario">
       <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
-    </div>
   <!-- <div *ngIf="authService.user | async">
     <p>Bienvenido : {{((authService.user | async) || {}).email}}</p>
     <button type="button" (click)="onLogout()">Logout</button>
   </div> -->
-  <form [formGroup]="authForm" *ngIf="!(authService.user | async)" class = "formulario">
-    <mat-form-field>
+  <form [formGroup]="authForm" *ngIf="!(authService.user | async)">
+    <!--mat-form-field>
       <mat-select #sel formControlName="sel" placeholder="Elige tu perfil">
         <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
           {{perfil.viewValue}}
         </mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field -->
     <div class="input">
       <p>Ingresa tu correo:</p>
       <input type="email" formControlName="email">
@@ -24,7 +22,11 @@
         <input type="password" formControlName="password">
     </div>
     <div class="botones">
-        <button type="button" (click)="onLogin()" [disabled]="!authForm.valid" class="btn">Log - in</button>
+        <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Log - in</button>
+        <br>
+        <button type="button" (click)="loginVol()" [disabled]="!authForm.valid" class="btn">Log - in de Voluntarios</button>
+        <br>
+        <button type="button" (click)="loginSol()" [disabled]="!authForm.valid" class="btn">Log - in de Organizaciones</button>
     </div>
  <!--       <div class="botones">
  Ejecutará ngSubmit -> onRegister puesto en la etiqueta form. Cambié esto porque daba error

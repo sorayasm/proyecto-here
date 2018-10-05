@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../servicios/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router} from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export interface Perfil {
   value: string;
@@ -19,7 +20,7 @@ export interface Perfil {
 
 export class LoginComponent implements OnInit {
   authForm: FormGroup;
-
+  value: any;
 
   perfiles: Perfil[] = [
     {value: 'orgs', viewValue: 'Organización'},
@@ -28,7 +29,12 @@ export class LoginComponent implements OnInit {
   ];
 
   // Solicitamos en el constructor todas las cosas necesarias
-  constructor(private formBuilder: FormBuilder, public authService: AuthService, public snackBar: MatSnackBar, public router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    public reactive: ReactiveFormsModule,
+    public authService: AuthService,
+    public snackBar: MatSnackBar,
+    public router: Router) {
     this.createAuthForm();
   }
 
@@ -51,7 +57,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.authForm.value.email, this.authForm.value.password)
       .then(() => {
         // Login exitoso, así que celebramos con el usuario (?)
-        this.loginRouting();
       })
       .catch(() => {
         // Algo salió mal, avisemos mejor para que reintente
@@ -79,18 +84,21 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  public loginRouting() {
-    this.authForm.get('sel').valueChanges.subscribe(value => {
-      console.log(value);
-      if (value === 'orgs') {
-      this.router.navigate(['/menu-org']);
-    } else if (value === 'vol') {
-      this.router.navigate(['/menu-voluntario']);
-    } else {
-      this.router.navigate(['/menu-solicitante']);
-    }
-     });
+  public loginVol() {
+    this.onLogin();
+    this.router.navigate(['/menu-voluntario']);
+  }
+
+  public loginSol() {
+    this.onLogin();
+    this.router.navigate(['/menu-solicitante']);
+  }
+
+  public loginOrg() {
+    this.onLogin();
+    this.router.navigate(['/menu-org']);
   }
 
 }
+
 

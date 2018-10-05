@@ -4,13 +4,15 @@ img {
 	height: 90px;
     width: 300px;
     margin-top: 7em;
-    margin-left: 5em;
+	margin-left: auto;
+	margin-right: auto;
     
 }
 
 .registro {
 	/* background-color: blueviolet; */
-	margin-left: 2em;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 8em;
 }
 

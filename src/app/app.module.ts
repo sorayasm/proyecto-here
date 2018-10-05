@@ -79,57 +79,42 @@ const appRoutes: Routes = [
    path: '',
    component: HomeComponent
   },
-
   {
     path: 'login',
     component: LoginComponent
   },
-
   {
     path: 'registro',
     component: RegistroComponent
   },
-
   {
     path: 'org-form',
     component: OrgFormComponent
   },
-
   {
     path: 'voluntario-form',
     component: VoluntarioFormComponent
   },
-
   {
     path: 'solicitante',
     component: SolicitanteComponent
   },
-
-  // {
-  //   path: 'navbar',
-  //   component: NavbarComponent
-  // },
-
   {
     path: 'menu-org',
     component: MenuOrgComponent
   },
-
   {
     path: 'menu-solicitante',
     component: MenuSolicitanteComponent
   },
-
   {
     path: 'menu-voluntario',
     component: MenuVoluntarioComponent,
   },
-
   {
     path: 'home',
     component: HomeComponent,
   },
- 
 ];
 
 // Services

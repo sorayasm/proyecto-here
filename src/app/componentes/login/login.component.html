@@ -22,11 +22,11 @@
         <input type="password" formControlName="password">
     </div>
     <div class="botones">
-        <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Log - in</button>
+        <button type="button" (click)="loginSol()" [disabled]="!authForm.valid" class="btn">Log - in</button>
         <br>
         <button type="button" (click)="loginVol()" [disabled]="!authForm.valid" class="btn">Log - in de Voluntarios</button>
         <br>
-        <button type="button" (click)="loginSol()" [disabled]="!authForm.valid" class="btn">Log - in de Organizaciones</button>
+        <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Log - in de Organizaciones</button>
     </div>
  <!--       <div class="botones">
  Ejecutará ngSubmit -> onRegister puesto en la etiqueta form. Cambié esto porque daba error

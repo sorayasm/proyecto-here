@@ -3,14 +3,12 @@
 
 .H_ib_body {
     width: 150px;
-    height: 200px;
     background-color: rgb(209, 189, 189);
-    color: white;
+    color: black;
     font-family: Roboto;
     border-radius: 7%;
     padding: 1em;
-    line-height: 8px;
-    background-color: beige;
+    line-height: 12px;
 }
 
 .H_ib_body p{

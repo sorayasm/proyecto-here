@@ -84,14 +84,14 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  public loginVol() {
-    this.onLogin();
-    this.router.navigate(['/menu-voluntario']);
-  }
-
   public loginSol() {
     this.onLogin();
     this.router.navigate(['/menu-solicitante']);
+  }
+
+  public loginVol() {
+    this.onLogin();
+    this.router.navigate(['/menu-voluntario']);
   }
 
   public loginOrg() {

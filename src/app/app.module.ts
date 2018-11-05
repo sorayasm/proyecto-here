@@ -140,7 +140,7 @@ export function getOrgServiceConfigs() { }
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(environment.firebase, 'proyecto-here'),
+    AngularFireModule.initializeApp(environment.firebase, 'moviliza-app'),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,

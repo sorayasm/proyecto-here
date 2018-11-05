@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyCKaVzJ6mcDjem_knZgL9y8kuMBUaidN2w',
-    authDomain: 'proyecto-here.firebaseapp.com',
-    databaseURL: 'https://proyecto-here.firebaseio.com',
-    projectId: 'proyecto-here',
-    storageBucket: 'proyecto-here.appspot.com',
-    messagingSenderId: '338909940432'
+    apiKey: 'AIzaSyB3WGM_diUOC5VnfXD252yUC29givWrJ9w',
+    authDomain: 'moviliza-app.firebaseapp.com',
+    databaseURL: 'https://moviliza-app.firebaseio.com',
+    projectId: 'moviliza-app',
+    storageBucket: 'moviliza-app.appspot.com',
+    messagingSenderId: '565573593685'
   },
 };
 

@@ -1,18 +1,7 @@
 
 <section class="formulario">
-      <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
-  <!-- <div *ngIf="authService.user | async">
-    <p>Bienvenido : {{((authService.user | async) || {}).email}}</p>
-    <button type="button" (click)="onLogout()">Logout</button>
-  </div> -->
+  <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
   <form [formGroup]="authForm" *ngIf="!(authService.user | async)">
-    <!--mat-form-field>
-      <mat-select #sel formControlName="sel" placeholder="Elige tu perfil">
-        <mat-option *ngFor="let perfil of perfiles" [value]="perfil.value">
-          {{perfil.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field -->
     <br>
     <h6>Login</h6>
     <br>
@@ -28,11 +17,6 @@
         <br>
         <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Login de Organizaciones</button>
     </div>
- <!--       <div class="botones">
- Ejecutará ngSubmit -> onRegister puesto en la etiqueta form. Cambié esto porque daba error
-        <button type="button"  [disabled]="!authForm.valid" class="btn btn-success">Log - in</button>
- Ejecutará onLogin
-        </div> -->
   </form>
 </section>
 

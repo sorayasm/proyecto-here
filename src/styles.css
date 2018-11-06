@@ -18,6 +18,13 @@ md-icon {
     color: rgb(49, 49, 49)
 }
 
+mat-form-field{
+    width: 90%;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    padding: .5em;
+  }
+
 .container {
     width: 100vw;
     text-align: center;
@@ -29,6 +36,10 @@ h6{
     color: #EF6c00;
 }
 
+h4 {
+    color: #EF6c00;
+}
+    
 .minimal {
     font-size: .5em;
 }
@@ -36,6 +47,12 @@ h6{
 .globo {
     width: 5em;
     margin: 30px 0px;
+}
+
+.globo-small {
+    width: 1.9em;
+    height: 3em;
+    margin: 15px auto;
 }
 
 .checkbox {

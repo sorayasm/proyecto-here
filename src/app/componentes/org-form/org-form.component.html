@@ -1,6 +1,6 @@
 <div class="container">
   <form [formGroup]="orgForm" (ngSubmit)="submit()">
-    <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="MovilizApp">
+    <img class="globo-small" src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="MovilizApp">
     <h6> ¡Muchas Gracias por querer colaborar!</h6>
     <h5>En este formulario podrás inscribirte como organización colaboradora en caso de una catástrofe en nuestro país. Por favor completa los siguientes campos:</h5>
     <br>
@@ -18,7 +18,7 @@
     <mat-form-field>
       <input matInput #contactrut type="text" formControlName="contactrut" placeholder="RUT de la persona de contacto">
     </mat-form-field>
-  <h4>Datos de la organización</h4>
+    <h4>Datos de la organización</h4>
     <mat-form-field>
       <input matInput #orgname type="text" formControlName="orgname" placeholder="Nombre de la organización">
     </mat-form-field>
@@ -59,7 +59,6 @@
       <mat-checkbox #check2 formControlName="check2">Políticas de privacidad de datos.</mat-checkbox><br>
       <mat-checkbox #check3 formControlName="check3">Convenio de Políticas de nuestra web.</mat-checkbox><br>
     </div>
-    
     <button class="btn" type="submit" [disabled]="!orgForm.valid">¡Enviar registro!</button>
   </form>
   <div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "movilizApp": {
+    "moviliza-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/movilizApp",
+            "outputPath": "dist/moviliza-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,14 +54,14 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "movilizApp:build:production"
+              "browserTarget": "moviliza-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "movilizApp:build"
+            "browserTarget": "moviliza-app:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "movilizApp-e2e": {
+    "moviliza-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "movilizApp:serve"
+            "devServerTarget": "moviliza-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "movilizApp:serve:production"
+              "devServerTarget": "moviliza-app:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "movilizApp"
+  "defaultProject": "moviliza-app"
 }

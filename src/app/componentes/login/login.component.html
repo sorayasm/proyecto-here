@@ -1,22 +1,16 @@
 
-<section class="formulario">
-  <img src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
+<section class="container">
+  <img class="globo" src="../../../assets/imagenes/isotipomoviliza-appsinsombra.png" alt="">
   <form [formGroup]="authForm" *ngIf="!(authService.user | async)">
-    <br>
     <h6>Login</h6>
-    <br>
       <p>Ingresa tu correo:</p>
       <input class="input" type="email" formControlName="email">
-      <br>
       <p>Ingresa tu contraseña:</p>
-        <input class="input" type="password" formControlName="password">
-    <div class="botones">
-        <button type="button" (click)="loginSol()" [disabled]="!authForm.valid" class="btn">Login</button>
-        <br>
-        <button type="button" (click)="loginVol()" [disabled]="!authForm.valid" class="btn">Login de Voluntarios</button>
-        <br>
-        <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Login de Organizaciones</button>
-    </div>
+      <input class="input" type="password" placeholder="Ingresa una contraseña de al menos 6 caracteres" formControlName="password">
+      <button type="button" (click)="loginSol()" [disabled]="!authForm.valid" class="btn">Login</button><br>
+      <button type="button" (click)="loginVol()" [disabled]="!authForm.valid" class="btn">Login de Voluntarios</button><br>
+      <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Login de Organizaciones</button>
+      <p class="minimal"><a routerLink="/">volver al inicio</a></p>
   </form>
 </section>
 

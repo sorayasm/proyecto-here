@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/movilizApp",
+    "public": "dist/moviliza-app",
     "ignore": [
       "firebase.json",
       "**/.*",

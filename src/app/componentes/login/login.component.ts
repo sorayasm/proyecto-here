@@ -48,11 +48,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  /*
-   * Instalé un módulo para hacer snackbars desde material.angular.io :
-   * MatSnackBarModule
-   */
-
   onLogin() {
     this.authService.login(this.authForm.value.email, this.authForm.value.password)
       .then(() => {
@@ -61,10 +56,11 @@ export class LoginComponent implements OnInit {
       .catch(() => {
         // Algo salió mal, avisemos mejor para que reintente
         this.snackBar.open('Error al tratar de iniciar sesión, trata otra vez'
-          , null/*No necesitamos botón en el aviso*/
+          , null
           , {
             duration: 3000
           });
+        this.router.navigate(['']);
       });
   }
 

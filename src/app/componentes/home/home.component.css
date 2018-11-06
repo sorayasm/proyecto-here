@@ -1,18 +1,6 @@
-.contenedor {
-	width: 100vw;
-	text-align: center;
-}
-
-img {
+.logo {
 	width: 300px;
 	margin: 100px auto 50px auto;
-}
-
-button {
-	background-color: #EF6c00;
-	color: aliceblue;
-	width: 300px;
-	margin: 0px auto;
 }
 
 

@@ -1,12 +1,12 @@
 
 <section class="container">
-  <img class="globo" src="../../../assets/imagenes/isotipomoviliza-appsinsombra.png" alt="">
+  <img class="globo" src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
   <form [formGroup]="authForm" *ngIf="!(authService.user | async)">
     <h6>Login</h6>
       <p>Ingresa tu correo:</p>
       <input class="input" type="email" formControlName="email">
       <p>Ingresa tu contraseña:</p>
-      <input class="input" type="password" placeholder="Ingresa una contraseña de al menos 6 caracteres" formControlName="password">
+      <input class="input" type="password" placeholder="Ingresa una contraseña de al menos 6 caracteres" formControlName="password"><br>
       <button type="button" (click)="loginSol()" [disabled]="!authForm.valid" class="btn">Login</button><br>
       <button type="button" (click)="loginVol()" [disabled]="!authForm.valid" class="btn">Login de Voluntarios</button><br>
       <button type="button" (click)="loginOrg()" [disabled]="!authForm.valid" class="btn">Login de Organizaciones</button>

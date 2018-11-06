@@ -1,14 +1,14 @@
 <div class="container">
-  <form [formGroup]='authForm' (ngSubmit)='onRegister()'>
-    <img class="globo" src="../../../assets/imagenes/isotipomoviliza-appsinsombra.png" alt="">
+  <form [formGroup]="authForm" (ngSubmit)="onRegister()">
+    <img class="globo" src="../../../assets/imagenes/isotipomovilizappsinsombra.png" alt="">
     <h6>Crea una cuenta</h6>
     <p>Ingresa un correo: </p>
-    <input type='email' formControlName='email'>
+    <input type="email" formControlName="email">
     <p>Ingresa una contraseña: </p>
-    <input type='password' formControlName='password'><br>
-    <button mat-button type='submit'class="btn">Registrarse</button><br>
-    <button mat-button routerLink='/login'class="btn">Ir a Login</button>
-    <p class="minimal"><a routerLink="/">volver al inicio</a></p>
+    <input type="password" formControlName="password"><br>
+    <button type="submit"class="btn">Registrarse</button><br>
+    <button type="button" routerLink="/login"class="btn">Ir a Login</button>
+    <p class="minimal"><a routerLink="/registro">volver atrás</a></p>
   </form>
 </div>
 

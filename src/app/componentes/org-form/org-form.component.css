@@ -6,36 +6,12 @@
 }
 
 img {
-    width: 1em;
-    height: 1.5em;
-  }
+    width: 1.9em;
+    height: 3em;
+    margin: 15px auto;
+}
   
-  h4, h6 {
-    color: #EF6c00;
-  }
+h4 {
+  color: #EF6c00;
+}
   
-  p {
-  
-  font-size: 12px;
-  }
-  
-  button {
-  
-    background-color: #EF6c00;
-    color: aliceblue;
-    text-align: center;
-  
-  
-  }
-  
-  .botones {
-    
-    padding: 2em;
-    text-align: center;
-  }
-
-  a {
-
-    color: #EF6c00;
-    font-size: 2em;
-  }
